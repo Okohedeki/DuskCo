@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuskCo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 60px 24px 40px;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        header p {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            padding: 60px 24px;
+            flex: 1;
+        }
+
+        .products {
+            display: grid;
+            gap: 24px;
+        }
+
+        .product-card {
+            display: block;
+            border: 1px solid #1a1a1a;
+            padding: 32px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .product-card:hover {
+            border-color: #333;
+            background: #111;
+        }
+
+        .product-card h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .product-card .tagline {
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        .product-card .arrow {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        .product-card:hover .arrow {
+            color: #aaa;
+        }
+
+        footer {
+            width: 100%;
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            font-size: 0.75rem;
+            color: #444;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DuskCo</h1>
+        <p>Products that perform</p>
+    </header>
+
+    <main>
+        <div class="products">
+            <a href="peptide-protocol/" class="product-card">
+                <h2>Peptide Protocol</h2>
+                <p class="tagline">Men's topical peptide skincare. Clinical-grade compounds. System-based routines. Your face is a system — treat it like one.</p>
+                <span class="arrow">View products &rarr;</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 DuskCo. All rights reserved.
+    </footer>
+</body>
+</html>

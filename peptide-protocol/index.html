@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peptide Protocol — DuskCo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+            padding: 20px 24px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        nav a {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #555;
+            text-decoration: none;
+        }
+
+        nav a:hover { color: #aaa; }
+
+        header {
+            width: 100%;
+            max-width: 800px;
+            padding: 60px 24px 40px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        header p.brand-line {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px 24px 60px;
+            flex: 1;
+        }
+
+        .bundles {
+            display: grid;
+            gap: 20px;
+        }
+
+        .bundle {
+            border: 1px solid #1a1a1a;
+            padding: 28px 32px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .bundle:hover {
+            border-color: #333;
+            background: #111;
+        }
+
+        .bundle h2 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .bundle .price {
+            margin-top: 6px;
+            font-size: 0.8rem;
+            color: #666;
+            letter-spacing: 0.05em;
+        }
+
+        .bundle .desc {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .bundle .products-list {
+            margin-top: 14px;
+            padding-left: 18px;
+            font-size: 0.8rem;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        .links-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .links-section h3 {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        .links-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .links-section li {
+            margin-bottom: 10px;
+        }
+
+        .links-section a {
+            font-size: 0.85rem;
+            color: #888;
+            text-decoration: none;
+            border-bottom: 1px solid #222;
+            padding-bottom: 2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .links-section a:hover {
+            color: #ccc;
+            border-color: #555;
+        }
+
+        footer {
+            width: 100%;
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            font-size: 0.75rem;
+            color: #444;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../">&larr; DuskCo</a>
+    </nav>
+
+    <header>
+        <h1>Peptide Protocol</h1>
+        <p class="brand-line">Your face is a system. Treat it like one.</p>
+    </header>
+
+    <main>
+        <div class="bundles">
+            <div class="bundle">
+                <h2>The Foundation</h2>
+                <span class="price">$79 &middot; $55/mo subscription</span>
+                <p class="desc">Entry-level daily system. Lowest barrier. Simplicity-first.</p>
+                <ul class="products-list">
+                    <li>Peptide AM Serum (Matrixyl + Argireline)</li>
+                    <li>SPF Moisturizer (niacinamide-infused)</li>
+                    <li>Precision Derma Roller (0.25mm)</li>
+                </ul>
+            </div>
+
+            <div class="bundle">
+                <h2>The Edge</h2>
+                <span class="price">$89 &middot; $65/mo subscription</span>
+                <p class="desc">Night-phase recovery system. Compounds work while you sleep.</p>
+                <ul class="products-list">
+                    <li>Peptide PM Repair Serum (copper peptides + EGF)</li>
+                    <li>Retinoid Night Shield (encapsulated retinol)</li>
+                    <li>Precision Derma Roller (0.25mm)</li>
+                </ul>
+            </div>
+
+            <div class="bundle">
+                <h2>The Protocol</h2>
+                <span class="price">$149 &middot; $99/mo subscription</span>
+                <p class="desc">Full AM/PM system. The complete stack.</p>
+                <ul class="products-list">
+                    <li>Peptide AM Serum</li>
+                    <li>SPF Moisturizer</li>
+                    <li>Peptide PM Repair Serum</li>
+                    <li>Retinoid Night Shield</li>
+                    <li>Precision Derma Roller (0.25mm)</li>
+                </ul>
+            </div>
+
+            <div class="bundle">
+                <h2>The Compound</h2>
+                <span class="price">$119 &middot; $85/mo subscription</span>
+                <p class="desc">Targeted intervention. Eyes + jawline + texture.</p>
+                <ul class="products-list">
+                    <li>Peptide Eye Compound (Haloxyl + Eyeliss + caffeine)</li>
+                    <li>Jawline Sculpt Serum (DMAE + peptides)</li>
+                    <li>AHA/BHA Resurface Pad (weekly)</li>
+                </ul>
+            </div>
+
+            <div class="bundle">
+                <h2>The Full Stack</h2>
+                <span class="price">$249 &middot; $179/mo subscription</span>
+                <p class="desc">Everything. Every compound. Every protocol. One system.</p>
+                <ul class="products-list">
+                    <li>All 7 products</li>
+                    <li>Precision Derma Roller</li>
+                    <li>Priority restocks</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Store (coming soon)</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 DuskCo &middot; Peptide Protocol
+    </footer>
+</body>
+</html>
