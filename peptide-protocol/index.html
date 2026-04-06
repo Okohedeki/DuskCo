@@ -4,199 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peptide Protocol — DuskCo</title>
+    <meta name="description" content="Men's topical peptide skincare. Clinical-grade compounds. System-based routines. Your face is a system — treat it like one.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0a0a0a; --border: #1a1a1a; --text: #e0e0e0; --text-dim: #888; --text-muted: #555; --white: #fff; --accent: #c8a97e; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-        body {
-            background: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        nav {
-            width: 100%;
-            padding: 20px 24px;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        nav a {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #555;
-            text-decoration: none;
-        }
-
-        nav a:hover { color: #aaa; }
+        nav { padding: 20px 24px; border-bottom: 1px solid var(--border); }
+        nav a { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; }
+        nav a:hover { color: var(--text-dim); }
 
         header {
             width: 100%;
             max-width: 800px;
-            padding: 60px 24px 20px;
+            margin: 0 auto;
+            padding: 80px 24px 20px;
+            text-align: center;
         }
-
-        header h1 {
-            font-size: 2rem;
-            font-weight: 400;
-            letter-spacing: 0.2em;
+        header .label {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: #ffffff;
+            color: var(--text-muted);
+            margin-bottom: 16px;
         }
-
-        header p.brand-line {
-            margin-top: 12px;
+        header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+        header .brand-line {
+            margin-top: 16px;
             font-size: 0.95rem;
-            color: #888;
+            color: var(--text-dim);
             font-style: italic;
         }
-
-        header p.intro {
+        header .intro {
             margin-top: 20px;
             font-size: 0.85rem;
-            color: #666;
+            color: var(--text-muted);
             line-height: 1.7;
-            max-width: 600px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         main {
             width: 100%;
             max-width: 800px;
-            padding: 40px 24px 60px;
-            flex: 1;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
         }
 
-        .bundles {
-            display: grid;
-            gap: 20px;
-        }
+        .bundles { display: grid; gap: 2px; background: var(--border); border: 1px solid var(--border); }
 
         .bundle {
-            border: 1px solid #1a1a1a;
-            padding: 28px 32px;
-            transition: border-color 0.2s, background 0.2s;
+            background: var(--bg);
+            padding: 32px;
+            transition: background 0.25s ease;
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
-
-        .bundle:hover {
-            border-color: #333;
-            background: #111;
-        }
+        .bundle:hover { background: var(--bg-raised, #111); }
 
         .bundle-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: baseline;
             flex-wrap: wrap;
             gap: 8px;
         }
 
         .bundle h2 {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 500;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            color: #fff;
-        }
-
-        .bundle h2 a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .bundle h2 a:hover {
-            border-bottom: 1px solid #555;
+            color: var(--white);
         }
 
         .bundle .price {
-            font-size: 0.85rem;
-            color: #fff;
-            letter-spacing: 0.02em;
-            white-space: nowrap;
+            font-size: 0.9rem;
+            color: var(--white);
+            font-weight: 400;
         }
-
         .bundle .price .sub {
-            color: #666;
+            color: var(--text-muted);
             font-size: 0.78rem;
+            font-weight: 400;
         }
 
-        .bundle .tagline {
-            margin-top: 8px;
-            font-size: 0.8rem;
-            color: #666;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-        }
-
-        .bundle .desc {
-            margin-top: 14px;
-            font-size: 0.85rem;
-            color: #999;
+        .bundle .pain {
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: var(--text-dim);
             line-height: 1.6;
         }
 
         .bundle .products-list {
             margin-top: 14px;
-            padding-left: 18px;
-            font-size: 0.8rem;
-            color: #777;
-            line-height: 1.8;
-        }
-
-        .bundle .actions {
-            margin-top: 20px;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
+            padding-left: 0;
+            list-style: none;
             font-size: 0.78rem;
-            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            line-height: 1.9;
+        }
+        .bundle .products-list li::before {
+            content: '—';
+            margin-right: 8px;
+            color: #2a2a2a;
+        }
+
+        .bundle .cta-hint {
+            margin-top: 16px;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #fff;
-            text-decoration: none;
-            border: 1px solid #333;
-            padding: 10px 24px;
-            transition: border-color 0.2s, background 0.2s;
+            color: var(--accent);
+            transition: color 0.2s;
         }
-
-        .btn:hover {
-            border-color: #555;
-            background: #181818;
-        }
-
-        .btn-secondary {
-            color: #666;
-            border-color: #222;
-        }
-
-        .btn-secondary:hover {
-            color: #aaa;
-            border-color: #444;
-        }
+        .bundle:hover .cta-hint { color: var(--white); }
 
         footer {
-            width: 100%;
             padding: 32px 24px;
             text-align: center;
-            border-top: 1px solid #1a1a1a;
-            font-size: 0.75rem;
-            color: #444;
+            border-top: 1px solid var(--border);
+            font-size: 0.7rem;
+            color: #333;
             letter-spacing: 0.1em;
         }
 
         @media (max-width: 600px) {
-            header { padding: 40px 16px 16px; }
-            header h1 { font-size: 1.5rem; }
-            main { padding: 24px 16px 40px; }
-            .bundle { padding: 20px; }
-            .bundle-header { flex-direction: column; }
-            .bundle .actions { flex-direction: column; }
-            .btn { text-align: center; }
+            header { padding: 48px 16px 16px; }
+            main { padding: 24px 16px 48px; }
+            .bundle { padding: 24px 20px; }
+            .bundle-header { flex-direction: column; gap: 4px; }
         }
     </style>
 </head>
@@ -206,106 +154,87 @@
     </nav>
 
     <header>
+        <p class="label">Men's Skin Performance</p>
         <h1>Peptide Protocol</h1>
         <p class="brand-line">Your face is a system. Treat it like one.</p>
-        <p class="intro">Clinical-grade peptide compounds. System-based routines. Each bundle is a complete protocol — not a collection of products. Pick the system that matches your objective.</p>
+        <p class="intro">Clinical-grade peptide compounds. System-based routines. Each bundle is a complete protocol targeting a specific outcome. Pick the problem. We give you the system.</p>
     </header>
 
     <main>
         <div class="bundles">
 
-            <div class="bundle">
+            <a href="the-foundation/" class="bundle">
                 <div class="bundle-header">
-                    <h2><a href="the-foundation/">The Foundation</a></h2>
+                    <h2>The Foundation</h2>
                     <span class="price">$79 <span class="sub">/ $55/mo</span></span>
                 </div>
-                <p class="tagline">Entry-level daily system</p>
-                <p class="desc">The minimum effective dose. 3 products, 90 seconds, every morning. Collagen signaling, UV defense, and amplified absorption.</p>
+                <p class="pain">You're losing 1% collagen per year after 25. Your face is the one system you haven't optimized. 3 products, 90 seconds, every morning.</p>
                 <ul class="products-list">
-                    <li>Peptide AM Serum (Matrixyl + Argireline) &mdash; collagen signaling + expression line reduction</li>
-                    <li>SPF Moisturizer (niacinamide-infused) &mdash; daily defense + tone evening</li>
-                    <li>Precision Derma Roller (0.25mm) &mdash; increases serum absorption 3-5x</li>
+                    <li>Peptide AM Serum (Matrixyl + Argireline)</li>
+                    <li>SPF Moisturizer (niacinamide-infused)</li>
+                    <li>Precision Derma Roller (0.25mm)</li>
                 </ul>
-                <div class="actions">
-                    <a href="#" class="btn">Buy Now &mdash; $79</a>
-                    <a href="the-foundation/" class="btn btn-secondary">View Protocol</a>
-                </div>
-            </div>
+                <p class="cta-hint">View Protocol &rarr;</p>
+            </a>
 
-            <div class="bundle">
+            <a href="the-edge/" class="bundle">
                 <div class="bundle-header">
-                    <h2><a href="the-edge/">The Edge</a></h2>
+                    <h2>The Edge</h2>
                     <span class="price">$89 <span class="sub">/ $65/mo</span></span>
                 </div>
-                <p class="tagline">Facial definition + structure</p>
-                <p class="desc">Jawline. Cheekbones. Sharpness. Three tools targeting three biological pathways for one outcome: a sharper face.</p>
+                <p class="pain">You didn't lose your jawline. It's under fluid and slack skin. 3 tools targeting 3 biological pathways for one outcome: a sharper face.</p>
                 <ul class="products-list">
-                    <li>GHK-Cu Copper Peptide Serum &mdash; skin remodeling, firmness, tightening</li>
-                    <li>Stainless Steel Contour Tool &mdash; lymphatic drainage, reduces puffiness, sculpts</li>
-                    <li>Mastic Gum (30-day supply) &mdash; masseter hypertrophy for jawline definition</li>
+                    <li>GHK-Cu Copper Peptide Serum</li>
+                    <li>Stainless Steel Contour Tool</li>
+                    <li>Mastic Gum (30-day supply)</li>
                 </ul>
-                <div class="actions">
-                    <a href="#" class="btn">Buy Now &mdash; $89</a>
-                    <a href="the-edge/" class="btn btn-secondary">View Protocol</a>
-                </div>
-            </div>
+                <p class="cta-hint">View Protocol &rarr;</p>
+            </a>
 
-            <div class="bundle">
+            <a href="the-reboot/" class="bundle">
                 <div class="bundle-header">
-                    <h2><a href="the-reboot/">The Reboot</a></h2>
+                    <h2>The Reboot</h2>
                     <span class="price">$149 <span class="sub">/ $55/mo</span></span>
                 </div>
-                <p class="tagline">Nighttime repair system</p>
-                <p class="desc">Your skin does 80% of its repair between 10pm and 2am. This system gives it better tools. Peptides, red light, and cold therapy while you sleep.</p>
+                <p class="pain">That "worn out" look you can't shake? It's inflammation. This system kills it overnight. 10 minutes before bed, wake up looking different.</p>
                 <ul class="products-list">
-                    <li>Night Peptide Serum (Syn-Ake + Leuphasyl + Matrixyl) &mdash; neuromuscular relaxation + collagen signaling during sleep</li>
-                    <li>Red Light Therapy Mask &mdash; photobiomodulation, mitochondrial stimulation, collagen activation</li>
-                    <li>Cryo Roller &mdash; post-treatment vasoconstriction, reduces inflammation</li>
+                    <li>Night Peptide Serum (Syn-Ake + Leuphasyl + Matrixyl)</li>
+                    <li>Red Light Therapy Mask</li>
+                    <li>Cryo Roller</li>
                 </ul>
-                <div class="actions">
-                    <a href="#" class="btn">Buy Now &mdash; $149</a>
-                    <a href="the-reboot/" class="btn btn-secondary">View Protocol</a>
-                </div>
-            </div>
+                <p class="cta-hint">View Protocol &rarr;</p>
+            </a>
 
-            <div class="bundle">
+            <a href="the-full-protocol/" class="bundle">
                 <div class="bundle-header">
-                    <h2><a href="the-full-protocol/">The Full Protocol</a></h2>
+                    <h2>The Full Protocol</h2>
                     <span class="price">$169 <span class="sub">/ $99/mo</span></span>
                 </div>
-                <p class="tagline">Complete AM/PM system</p>
-                <p class="desc">Morning defense. Night repair. Two serums, two tools, one moisturizer. 4 minutes per day, every pathway covered, zero guesswork.</p>
+                <p class="pain">You've spent 6 months researching what to do about your skin. This is the answer. One box. Both routines. Morning and night. Done.</p>
                 <ul class="products-list">
-                    <li>AM Peptide Serum (Matrixyl + Argireline) &mdash; collagen signaling + expression line defense</li>
-                    <li>PM Night Serum (Syn-Ake + Leuphasyl) &mdash; neuromuscular relaxation + repair during sleep</li>
-                    <li>SPF Moisturizer &mdash; niacinamide-infused daily defense</li>
-                    <li>Precision Derma Roller (0.25mm) &mdash; drives absorption 3-5x deeper</li>
-                    <li>Cryo Roller &mdash; vasoconstriction + anti-inflammation post-treatment</li>
+                    <li>AM Peptide Serum (Matrixyl + Argireline)</li>
+                    <li>PM Night Serum (Syn-Ake + Leuphasyl)</li>
+                    <li>SPF Moisturizer</li>
+                    <li>Precision Derma Roller (0.25mm)</li>
+                    <li>Cryo Roller</li>
                 </ul>
-                <div class="actions">
-                    <a href="#" class="btn">Buy Now &mdash; $169</a>
-                    <a href="the-full-protocol/" class="btn btn-secondary">View Protocol</a>
-                </div>
-            </div>
+                <p class="cta-hint">View Protocol &rarr;</p>
+            </a>
 
-            <div class="bundle">
+            <a href="the-rebuild/" class="bundle">
                 <div class="bundle-header">
-                    <h2><a href="the-rebuild/">The Rebuild</a></h2>
+                    <h2>The Rebuild</h2>
                     <span class="price">$159 <span class="sub">/ $85/mo</span></span>
                 </div>
-                <p class="tagline">Volume restoration + skin tightening</p>
-                <p class="desc">For men who've lost facial volume &mdash; from weight loss, GLP-1 meds, aging, or cutting. Four tools to force skin remodeling and restore structure.</p>
+                <p class="pain">Everyone told you to lose the weight. Nobody told you what it would do to your face. The skin didn't tighten. The volume collapsed. This forces the rebuild.</p>
                 <ul class="products-list">
-                    <li>GHK-Cu Copper Peptide Serum &mdash; tissue remodeling + tightening</li>
-                    <li>Collagen Signal Serum (Matrixyl + SNAP-8) &mdash; collagen synthesis + expression line smoothing</li>
-                    <li>Red Light Therapy Mask &mdash; mitochondrial stimulation for cellular repair</li>
-                    <li>Stainless Steel Contour Tool &mdash; lymphatic drainage + structural sculpting</li>
+                    <li>GHK-Cu Copper Peptide Serum</li>
+                    <li>Collagen Signal Serum (Matrixyl + SNAP-8)</li>
+                    <li>Red Light Therapy Mask</li>
+                    <li>Stainless Steel Contour Tool</li>
                 </ul>
-                <div class="actions">
-                    <a href="#" class="btn">Buy Now &mdash; $159</a>
-                    <a href="the-rebuild/" class="btn btn-secondary">View Protocol</a>
-                </div>
-            </div>
+                <p class="cta-hint">View Protocol &rarr;</p>
+            </a>
 
         </div>
     </main>

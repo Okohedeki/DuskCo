@@ -4,354 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Edge — Peptide Protocol</title>
-    <meta name="description" content="Jawline. Cheekbones. Definition. Built, not born. Copper peptide serum, contour tool, and mastic gum. $89 or $65/mo.">
+    <meta name="description" content="You didn't lose your jawline. It's under fluid and slack skin. 3 tools, 3 biological pathways, one outcome: a sharper face. $89 or $65/mo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        nav {
-            width: 100%;
-            padding: 20px 24px;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        nav a {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #555;
-            text-decoration: none;
-        }
-
-        nav a:hover { color: #aaa; }
-
-        .hero {
-            width: 100%;
-            max-width: 720px;
-            padding: 80px 24px 60px;
-            text-align: center;
-        }
-
-        .hero .label {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #fff;
-        }
-
-        .hero .hook {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: #999;
-            line-height: 1.6;
-        }
-
-        .hero .price-block {
-            margin-top: 32px;
-        }
-
-        .hero .price-main {
-            font-size: 1.8rem;
-            color: #fff;
-            font-weight: 300;
-        }
-
-        .hero .price-sub {
-            margin-top: 6px;
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        .hero .cta-group {
-            margin-top: 32px;
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            font-size: 0.8rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 14px 32px;
-            transition: border-color 0.2s, background 0.2s;
-        }
-
-        .btn-primary {
-            color: #0a0a0a;
-            background: #fff;
-            border: 1px solid #fff;
-        }
-
-        .btn-primary:hover {
-            background: #ddd;
-            border-color: #ddd;
-        }
-
-        .btn-secondary {
-            color: #fff;
-            background: transparent;
-            border: 1px solid #333;
-        }
-
-        .btn-secondary:hover {
-            border-color: #555;
-            background: #181818;
-        }
-
-        section {
-            width: 100%;
-            max-width: 720px;
-            padding: 0 24px;
-        }
-
-        .divider {
-            width: 100%;
-            max-width: 720px;
-            border: none;
-            border-top: 1px solid #1a1a1a;
-            margin: 60px auto;
-        }
-
-        .protocol-section h2 {
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: 40px;
-        }
-
-        .step {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 36px;
-        }
-
-        .step-num {
-            font-size: 2.5rem;
-            font-weight: 200;
-            color: #222;
-            line-height: 1;
-            min-width: 40px;
-        }
-
-        .step-content h3 {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #fff;
-            letter-spacing: 0.05em;
-            margin-bottom: 6px;
-        }
-
-        .step-content .compound {
-            font-size: 0.78rem;
-            color: #555;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .step-content p {
-            font-size: 0.85rem;
-            color: #888;
-            line-height: 1.7;
-        }
-
-        .system-section {
-            text-align: center;
-        }
-
-        .system-section h2 {
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .system-section p {
-            font-size: 0.95rem;
-            color: #888;
-            line-height: 1.8;
-            max-width: 560px;
-            margin: 0 auto;
-        }
-
-        .system-section .brand-line {
-            margin-top: 24px;
-            font-size: 1rem;
-            color: #fff;
-            font-style: italic;
-        }
-
-        .final-cta {
-            text-align: center;
-            padding-bottom: 20px;
-        }
-
-        .final-cta .price-main {
-            font-size: 2rem;
-            color: #fff;
-            font-weight: 300;
-        }
-
-        .final-cta .price-sub {
-            margin-top: 6px;
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 28px;
-        }
-
-        .final-cta .cta-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .proof-section {
-            text-align: center;
-        }
-
-        .proof-section h2 {
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .proof-placeholder {
-            border: 1px dashed #222;
-            padding: 40px 24px;
-            color: #444;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
-        }
-
-        footer {
-            width: 100%;
-            padding: 32px 24px;
-            text-align: center;
-            border-top: 1px solid #1a1a1a;
-            font-size: 0.75rem;
-            color: #444;
-            letter-spacing: 0.1em;
-            margin-top: 60px;
-        }
-
-        @media (max-width: 600px) {
-            .hero { padding: 48px 16px 40px; }
-            .hero h1 { font-size: 1.6rem; }
-            .hero .hook { font-size: 0.95rem; }
-            section { padding: 0 16px; }
-            .step { gap: 16px; }
-            .step-num { font-size: 2rem; min-width: 30px; }
-            .btn { padding: 12px 24px; font-size: 0.75rem; }
+        :root { --bg: #0a0a0a; --bg-raised: #111; --border: #1a1a1a; --text: #e0e0e0; --text-dim: #888; --text-muted: #555; --white: #fff; --accent: #c8a97e; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        nav { padding: 20px 24px; border-bottom: 1px solid var(--border); }
+        nav a { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; }
+        nav a:hover { color: var(--text-dim); }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 80px 24px; position: relative; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 80px; background: linear-gradient(to bottom, var(--border), transparent); }
+        .hero .label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards; }
+        .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--white); line-height: 1.3; max-width: 700px; opacity: 0; animation: fadeUp 0.8s ease 0.15s forwards; }
+        .hero h1 strong { font-weight: 500; color: var(--accent); }
+        .hero .sub { margin-top: 20px; font-size: clamp(0.9rem, 2vw, 1.05rem); color: var(--text-dim); max-width: 520px; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+        .hero .cta-group { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fadeUp 0.8s ease 0.45s forwards; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding: 14px 36px; transition: all 0.25s ease; cursor: pointer; }
+        .btn-primary { color: var(--bg); background: var(--white); border: 1px solid var(--white); }
+        .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+        .btn-secondary { color: var(--white); background: transparent; border: 1px solid #333; }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+        section { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        .section-divider { width: 100%; max-width: 720px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
+        .section-spacer { height: 80px; }
+        .section-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; }
+        .agitate h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 32px; }
+        .agitate p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 24px; }
+        .agitate .stat { display: flex; align-items: baseline; gap: 16px; margin: 40px 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .agitate .stat-number { font-size: 2.5rem; font-weight: 200; color: var(--accent); white-space: nowrap; }
+        .agitate .stat-text { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+        .bridge h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 16px; }
+        .bridge .intro { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 40px; }
+        .protocol-step { display: flex; gap: 24px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+        .protocol-step:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .protocol-step .num { font-size: 3rem; font-weight: 200; color: #1a1a1a; line-height: 1; min-width: 48px; }
+        .protocol-step h3 { font-size: 0.95rem; font-weight: 500; color: var(--white); letter-spacing: 0.03em; margin-bottom: 4px; }
+        .protocol-step .compound { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+        .protocol-step p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.75; }
+        .outcome { text-align: center; }
+        .outcome h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 28px; }
+        .outcome p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; max-width: 560px; margin: 0 auto 20px; }
+        .outcome .brand-line { margin-top: 32px; font-size: 1rem; color: var(--white); font-style: italic; }
+        .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 32px; }
+        .proof-item { background: var(--bg); padding: 32px 24px; text-align: center; }
+        .proof-item .proof-num { font-size: 1.6rem; font-weight: 300; color: var(--accent); margin-bottom: 8px; }
+        .proof-item h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); font-weight: 500; margin-bottom: 8px; }
+        .proof-item p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+        .objections { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 40px; }
+        .objection { background: var(--bg); padding: 28px 24px; }
+        .objection .q { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-bottom: 10px; }
+        .objection .a { font-size: 0.82rem; color: var(--text-dim); line-height: 1.6; }
+        .final-cta { text-align: center; padding: 80px 24px; max-width: 720px; margin: 0 auto; }
+        .final-cta .price { font-size: clamp(2rem, 5vw, 3rem); font-weight: 200; color: var(--white); }
+        .final-cta .price-context { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); }
+        .final-cta .price-context strong { color: var(--text-dim); font-weight: 500; }
+        .final-cta .cta-group { margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .final-cta .guarantee { margin-top: 24px; font-size: 0.75rem; color: var(--text-muted); }
+        footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); font-size: 0.7rem; color: #333; letter-spacing: 0.1em; }
+        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 768px) {
+            .hero { min-height: 90vh; padding: 60px 20px; } .section-spacer { height: 56px; } section { padding: 0 20px; }
+            .protocol-step { gap: 16px; } .protocol-step .num { font-size: 2.2rem; min-width: 36px; }
+            .proof-grid, .objections { grid-template-columns: 1fr; }
+            .btn { padding: 12px 28px; width: 100%; text-align: center; } .final-cta { padding: 56px 20px; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="../">&larr; All Protocols</a>
-    </nav>
+    <nav><a href="../">&larr; All Protocols</a></nav>
 
     <div class="hero">
         <p class="label">Peptide Protocol</p>
-        <h1>The Edge</h1>
-        <p class="hook">Jawline. Cheekbones. Definition. Built, not born.</p>
-        <div class="price-block">
-            <div class="price-main">$89</div>
-            <div class="price-sub">or $65/mo with auto-refills</div>
-        </div>
+        <h1>You didn't lose your jawline. It's under <strong>fluid and slack skin.</strong> Get it back.</h1>
+        <p class="sub">Your face has 43 muscles. When's the last time you trained one? The structure is still there — it's masked by retention and laxity. This system strips it back.</p>
         <div class="cta-group">
-            <a href="#" class="btn btn-primary">Start the Protocol</a>
+            <a href="#" class="btn btn-primary">Start the Protocol &mdash; $89</a>
             <a href="#" class="btn btn-secondary">Subscribe &mdash; $65/mo</a>
         </div>
     </div>
 
-    <hr class="divider">
+    <div class="section-spacer"></div>
 
-    <section class="protocol-section">
-        <h2>3 Tools. 3 Biological Pathways.</h2>
+    <section class="agitate fade-in">
+        <p class="section-label">The Problem</p>
+        <h2>The difference between looking tired and looking sharp is about 2mm of fluid.</h2>
 
-        <div class="step">
-            <span class="step-num">01</span>
-            <div class="step-content">
+        <p>You see it in photos. Side profile doesn't hit like it used to. Jawline's softer. Cheekbones are buried. You're not overweight — you're holding subcutaneous fluid and your skin has lost the tension that held definition in place.</p>
+
+        <p>You train your chest, your back, your legs. You've never trained the muscle responsible for how your jaw looks. And the skin sitting over your bone structure? It's been degrading silently — losing firmness, elasticity, and the collagen that kept everything tight.</p>
+
+        <div class="stat">
+            <span class="stat-number">43</span>
+            <span class="stat-text">Muscles in the human face. The masseter — the muscle that defines your jawline — responds to progressive resistance just like any other muscle. Most men have never trained it once.</span>
+        </div>
+
+        <p>The grooming industry sells you moisturizer and calls it done. Plastic surgeons offer implants and fillers. Nobody's offering you a system that targets all three pathways to facial definition: skin tightening, fluid drainage, and muscle development. Until now.</p>
+    </section>
+
+    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
+
+    <section class="bridge fade-in">
+        <p class="section-label">The Protocol</p>
+        <h2>3 tools. 3 biological pathways. One outcome: a sharper face.</h2>
+        <p class="intro">The Edge targets definition through three mechanisms simultaneously. Skin remodeling tightens the surface. Lymphatic drainage removes the fluid blurring your structure. Masseter training builds the muscle underneath. Each one compounds the others.</p>
+
+        <div class="protocol-step fade-in">
+            <span class="num">01</span>
+            <div>
                 <h3>GHK-Cu Copper Peptide Serum</h3>
                 <p class="compound">Skin remodeling + tightening</p>
-                <p>GHK-Cu is one of the most studied peptides in skin remodeling. It triggers tissue tightening and collagen restructuring at the cellular level — firmer, denser skin that holds definition instead of blurring it. Apply to jawline, cheekbones, and under-chin.</p>
+                <p>GHK-Cu is one of the most studied compounds in skin remodeling. It triggers tissue tightening and collagen restructuring at the cellular level — firmer, denser skin that holds definition instead of blurring it. Apply to jawline, cheekbones, and under-chin where laxity compounds.</p>
             </div>
         </div>
 
-        <div class="step">
-            <span class="step-num">02</span>
-            <div class="step-content">
+        <div class="protocol-step fade-in">
+            <span class="num">02</span>
+            <div>
                 <h3>Stainless Steel Contour Tool</h3>
                 <p class="compound">Lymphatic drainage + sculpting</p>
-                <p>Retained subcutaneous fluid blurs your jawline and cheekbones. The steel contour tool pushes it out through firm, deliberate strokes along the jaw and orbital bone. This isn't a gentle spa motion — it's mechanical drainage. The difference between looking tired and looking sharp is about 2mm of fluid.</p>
+                <p>Retained subcutaneous fluid masks your bone structure. The steel contour tool moves it through firm, deliberate strokes along the jaw and orbital bone. This isn't gentle spa motions — it's mechanical drainage. You'll see the difference after the first session. The effect compounds daily.</p>
             </div>
         </div>
 
-        <div class="step">
-            <span class="step-num">03</span>
-            <div class="step-content">
+        <div class="protocol-step fade-in">
+            <span class="num">03</span>
+            <div>
                 <h3>Mastic Gum</h3>
                 <p class="compound">30-day supply &mdash; masseter hypertrophy</p>
-                <p>The masseter is the muscle that defines your jawline. Mastic gum provides progressive chewing resistance that builds it over time — the same principle as any other muscle hypertrophy protocol. Chew for 20-30 minutes daily. Visible jaw width increase within 4-6 weeks.</p>
+                <p>The masseter is the muscle that defines jaw width and sharpness. Mastic gum provides progressive chewing resistance — same principle as any hypertrophy protocol. 20-30 minutes of daily chewing. Visible jaw width increase within 4-6 weeks. You train every other muscle. This is the one people see.</p>
             </div>
         </div>
     </section>
 
-    <hr class="divider">
+    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
 
-    <section class="system-section">
-        <h2>Why a System</h2>
-        <p>Definition isn't one thing — it's the result of three: tight skin, drained fluid, and developed muscle. The serum remodels tissue. The tool drains fluid. The gum builds the underlying structure. Each compounds the others. One tool gives you a temporary effect. The system gives you a permanent one.</p>
+    <section class="outcome fade-in">
+        <p class="section-label">The Outcome</p>
+        <h2>Definition isn't cosmetic. It's structural. And structure can be built.</h2>
+        <p>Tighter skin over drained tissue over a developed muscle. That's what definition is. Not genetics. Not surgery. Not angles. The serum remodels. The tool drains. The gum builds. Each compounds the others. One tool gives you a temporary effect. The system gives you a permanent one.</p>
         <p class="brand-line">Your face is a system. Treat it like one.</p>
     </section>
 
-    <hr class="divider">
+    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
 
-    <section class="final-cta">
-        <div class="price-main">$89</div>
-        <div class="price-sub">One-time purchase &middot; or $65/mo with auto-refills</div>
-        <div class="cta-group">
-            <a href="#" class="btn btn-primary">Buy Once &mdash; $89</a>
-            <a href="#" class="btn btn-secondary">Subscribe &mdash; $65/mo</a>
+    <section class="fade-in">
+        <p class="section-label">Why It Works</p>
+        <div class="proof-grid">
+            <div class="proof-item">
+                <div class="proof-num">3</div>
+                <h4>Pathways</h4>
+                <p>Skin remodeling, fluid drainage, and muscle hypertrophy — targeted simultaneously</p>
+            </div>
+            <div class="proof-item">
+                <div class="proof-num">2mm</div>
+                <h4>Of Fluid</h4>
+                <p>The difference between looking tired and looking sharp. The contour tool moves it daily.</p>
+            </div>
+            <div class="proof-item">
+                <div class="proof-num">4-6wk</div>
+                <h4>Visible Results</h4>
+                <p>Masseter hypertrophy follows the same timeline as any progressive resistance protocol</p>
+            </div>
+        </div>
+
+        <div class="objections">
+            <div class="objection">
+                <p class="q">"Isn't gua sha a spa thing?"</p>
+                <p class="a">This isn't gua sha. It's a stainless steel drainage tool used with firm, deliberate strokes. Think physical therapy, not wellness retreat.</p>
+            </div>
+            <div class="objection">
+                <p class="q">"Does chewing gum actually build your jaw?"</p>
+                <p class="a">Mastic gum is 10x harder than regular gum. The masseter responds to progressive load like any skeletal muscle. This is how bodybuilders build jaws.</p>
+            </div>
+            <div class="objection">
+                <p class="q">"I'm not sure my jawline is fixable."</p>
+                <p class="a">Your bone structure hasn't changed. It's masked by fluid retention and skin laxity. Drain the fluid, tighten the skin, build the muscle — the structure is still there.</p>
+            </div>
+            <div class="objection">
+                <p class="q">"Will people notice?"</p>
+                <p class="a">They'll notice you look sharper. They won't know why. That's the point.</p>
+            </div>
         </div>
     </section>
 
-    <hr class="divider">
+    <div class="section-spacer"></div><hr class="section-divider">
 
-    <section class="proof-section">
-        <h2>Results</h2>
-        <div class="proof-placeholder">Real user results — coming soon</div>
-    </section>
+    <div class="final-cta fade-in">
+        <div class="price">$89</div>
+        <p class="price-context">One-time purchase &middot; or <strong>$65/mo</strong> with auto-refills</p>
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">Start the Protocol &mdash; $89</a>
+            <a href="#" class="btn btn-secondary">Subscribe &mdash; $65/mo</a>
+        </div>
+        <p class="guarantee">Free shipping &middot; Protocol card included &middot; Cancel subscription anytime</p>
+    </div>
 
-    <footer>
-        &copy; 2026 DuskCo &middot; Peptide Protocol
-    </footer>
+    <footer>&copy; 2026 DuskCo &middot; Peptide Protocol</footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.12, rootMargin: '-20px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

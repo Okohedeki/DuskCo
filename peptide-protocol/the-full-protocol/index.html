@@ -4,386 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Full Protocol — Peptide Protocol</title>
-    <meta name="description" content="The complete AM/PM system. Morning defense. Night repair. 5 products, 4 minutes per day, zero guesswork. $169 or $99/mo.">
+    <meta name="description" content="You've spent 6 months researching skincare. This is the answer. 5 products, 4 minutes, morning and night. $169 or $99/mo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        nav {
-            width: 100%;
-            padding: 20px 24px;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        nav a {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #555;
-            text-decoration: none;
-        }
-
-        nav a:hover { color: #aaa; }
-
-        .hero {
-            width: 100%;
-            max-width: 720px;
-            padding: 80px 24px 60px;
-            text-align: center;
-        }
-
-        .hero .label {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #fff;
-        }
-
-        .hero .hook {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: #999;
-            line-height: 1.6;
-        }
-
-        .hero .price-block {
-            margin-top: 32px;
-        }
-
-        .hero .price-main {
-            font-size: 1.8rem;
-            color: #fff;
-            font-weight: 300;
-        }
-
-        .hero .price-sub {
-            margin-top: 6px;
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        .hero .cta-group {
-            margin-top: 32px;
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            font-size: 0.8rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 14px 32px;
-            transition: border-color 0.2s, background 0.2s;
-        }
-
-        .btn-primary {
-            color: #0a0a0a;
-            background: #fff;
-            border: 1px solid #fff;
-        }
-
-        .btn-primary:hover {
-            background: #ddd;
-            border-color: #ddd;
-        }
-
-        .btn-secondary {
-            color: #fff;
-            background: transparent;
-            border: 1px solid #333;
-        }
-
-        .btn-secondary:hover {
-            border-color: #555;
-            background: #181818;
-        }
-
-        section {
-            width: 100%;
-            max-width: 720px;
-            padding: 0 24px;
-        }
-
-        .divider {
-            width: 100%;
-            max-width: 720px;
-            border: none;
-            border-top: 1px solid #1a1a1a;
-            margin: 60px auto;
-        }
-
-        .protocol-section h2 {
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: 40px;
-        }
-
-        .routine-label {
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #444;
-            margin-bottom: 24px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        .step {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 36px;
-        }
-
-        .step-num {
-            font-size: 2.5rem;
-            font-weight: 200;
-            color: #222;
-            line-height: 1;
-            min-width: 40px;
-        }
-
-        .step-content h3 {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #fff;
-            letter-spacing: 0.05em;
-            margin-bottom: 6px;
-        }
-
-        .step-content .compound {
-            font-size: 0.78rem;
-            color: #555;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .step-content p {
-            font-size: 0.85rem;
-            color: #888;
-            line-height: 1.7;
-        }
-
-        .system-section {
-            text-align: center;
-        }
-
-        .system-section h2 {
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .system-section p {
-            font-size: 0.95rem;
-            color: #888;
-            line-height: 1.8;
-            max-width: 560px;
-            margin: 0 auto;
-        }
-
-        .system-section .brand-line {
-            margin-top: 24px;
-            font-size: 1rem;
-            color: #fff;
-            font-style: italic;
-        }
-
-        .final-cta {
-            text-align: center;
-            padding-bottom: 20px;
-        }
-
-        .final-cta .price-main {
-            font-size: 2rem;
-            color: #fff;
-            font-weight: 300;
-        }
-
-        .final-cta .price-sub {
-            margin-top: 6px;
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 28px;
-        }
-
-        .final-cta .cta-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .proof-section {
-            text-align: center;
-        }
-
-        .proof-section h2 {
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .proof-placeholder {
-            border: 1px dashed #222;
-            padding: 40px 24px;
-            color: #444;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
-        }
-
-        footer {
-            width: 100%;
-            padding: 32px 24px;
-            text-align: center;
-            border-top: 1px solid #1a1a1a;
-            font-size: 0.75rem;
-            color: #444;
-            letter-spacing: 0.1em;
-            margin-top: 60px;
-        }
-
-        @media (max-width: 600px) {
-            .hero { padding: 48px 16px 40px; }
-            .hero h1 { font-size: 1.6rem; }
-            .hero .hook { font-size: 0.95rem; }
-            section { padding: 0 16px; }
-            .step { gap: 16px; }
-            .step-num { font-size: 2rem; min-width: 30px; }
-            .btn { padding: 12px 24px; font-size: 0.75rem; }
+        :root { --bg: #0a0a0a; --border: #1a1a1a; --text: #e0e0e0; --text-dim: #888; --text-muted: #555; --white: #fff; --accent: #c8a97e; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        nav { padding: 20px 24px; border-bottom: 1px solid var(--border); }
+        nav a { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; }
+        nav a:hover { color: var(--text-dim); }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 80px 24px; position: relative; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 80px; background: linear-gradient(to bottom, var(--border), transparent); }
+        .hero .label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards; }
+        .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--white); line-height: 1.3; max-width: 700px; opacity: 0; animation: fadeUp 0.8s ease 0.15s forwards; }
+        .hero h1 strong { font-weight: 500; color: var(--accent); }
+        .hero .sub { margin-top: 20px; font-size: clamp(0.9rem, 2vw, 1.05rem); color: var(--text-dim); max-width: 520px; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+        .hero .cta-group { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fadeUp 0.8s ease 0.45s forwards; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding: 14px 36px; transition: all 0.25s ease; cursor: pointer; }
+        .btn-primary { color: var(--bg); background: var(--white); border: 1px solid var(--white); }
+        .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+        .btn-secondary { color: var(--white); background: transparent; border: 1px solid #333; }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+        section { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        .section-divider { width: 100%; max-width: 720px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
+        .section-spacer { height: 80px; }
+        .section-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; }
+        .agitate h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 32px; }
+        .agitate p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 24px; }
+        .agitate .stat { display: flex; align-items: baseline; gap: 16px; margin: 40px 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .agitate .stat-number { font-size: 2.5rem; font-weight: 200; color: var(--accent); white-space: nowrap; }
+        .agitate .stat-text { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+        .bridge h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 16px; }
+        .bridge .intro { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 40px; }
+        .routine-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+        .protocol-step { display: flex; gap: 24px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+        .protocol-step:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .protocol-step .num { font-size: 3rem; font-weight: 200; color: #1a1a1a; line-height: 1; min-width: 48px; }
+        .protocol-step h3 { font-size: 0.95rem; font-weight: 500; color: var(--white); letter-spacing: 0.03em; margin-bottom: 4px; }
+        .protocol-step .compound { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+        .protocol-step p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.75; }
+        .routine-spacer { height: 48px; }
+        .outcome { text-align: center; }
+        .outcome h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 28px; }
+        .outcome p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; max-width: 560px; margin: 0 auto 20px; }
+        .outcome .brand-line { margin-top: 32px; font-size: 1rem; color: var(--white); font-style: italic; }
+        .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 32px; }
+        .proof-item { background: var(--bg); padding: 32px 24px; text-align: center; }
+        .proof-item .proof-num { font-size: 1.6rem; font-weight: 300; color: var(--accent); margin-bottom: 8px; }
+        .proof-item h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); font-weight: 500; margin-bottom: 8px; }
+        .proof-item p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
+        .objections { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 40px; }
+        .objection { background: var(--bg); padding: 28px 24px; }
+        .objection .q { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-bottom: 10px; }
+        .objection .a { font-size: 0.82rem; color: var(--text-dim); line-height: 1.6; }
+        .final-cta { text-align: center; padding: 80px 24px; max-width: 720px; margin: 0 auto; }
+        .final-cta .price { font-size: clamp(2rem, 5vw, 3rem); font-weight: 200; color: var(--white); }
+        .final-cta .price-context { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); }
+        .final-cta .price-context strong { color: var(--text-dim); font-weight: 500; }
+        .final-cta .cta-group { margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .final-cta .guarantee { margin-top: 24px; font-size: 0.75rem; color: var(--text-muted); }
+        footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); font-size: 0.7rem; color: #333; letter-spacing: 0.1em; }
+        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 768px) {
+            .hero { min-height: 90vh; padding: 60px 20px; } .section-spacer { height: 56px; } section { padding: 0 20px; }
+            .protocol-step { gap: 16px; } .protocol-step .num { font-size: 2.2rem; min-width: 36px; }
+            .proof-grid, .objections { grid-template-columns: 1fr; }
+            .btn { padding: 12px 28px; width: 100%; text-align: center; } .final-cta { padding: 56px 20px; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="../">&larr; All Protocols</a>
-    </nav>
+    <nav><a href="../">&larr; All Protocols</a></nav>
 
     <div class="hero">
         <p class="label">Peptide Protocol</p>
-        <h1>The Full Protocol</h1>
-        <p class="hook">The complete AM/PM system. Morning defense. Night repair. Nothing left to figure out.</p>
-        <div class="price-block">
-            <div class="price-main">$169</div>
-            <div class="price-sub">or $99/mo with auto-refills</div>
-        </div>
+        <h1>You've spent 6 months researching what to do about your skin. <strong>This is the answer.</strong></h1>
+        <p class="sub">One box. Both routines. A protocol card that says "do this in the morning, do this at night." Stop Googling. Start here.</p>
         <div class="cta-group">
-            <a href="#" class="btn btn-primary">Get the Full Protocol</a>
+            <a href="#" class="btn btn-primary">Get the Full Protocol &mdash; $169</a>
             <a href="#" class="btn btn-secondary">Subscribe &mdash; $99/mo</a>
         </div>
     </div>
 
-    <hr class="divider">
+    <div class="section-spacer"></div>
 
-    <section class="protocol-section">
-        <h2>5 Products. 4 Minutes. 24-Hour Coverage.</h2>
+    <section class="agitate fade-in">
+        <p class="section-label">The Problem</p>
+        <h2>You know you should do something about your face. You just don't know what.</h2>
 
-        <p class="routine-label">AM Routine &mdash; 2 minutes</p>
+        <p>You've opened 40 browser tabs. You've read Reddit threads from dermatologists, watched YouTube videos from guys half your age, and compared ingredient lists you don't understand. Retinol or peptides? Vitamin C in the morning or night? Do you need SPF if you work indoors?</p>
 
-        <div class="step">
-            <span class="step-num">01</span>
-            <div class="step-content">
+        <p>The information exists. The protocol doesn't. Every brand sells you one piece of the puzzle and expects you to assemble it yourself. You're not going to do that. You have a career, a family, and approximately zero interest in becoming a skincare expert.</p>
+
+        <div class="stat">
+            <span class="stat-number">4min</span>
+            <span class="stat-text">That's all this takes. 2 minutes in the morning, 2 at night. The protocol card tells you the order. You don't have to understand why it works. You just have to show up for 4 minutes.</span>
+        </div>
+
+        <p>The cost of doing nothing? It compounds. Every month without a system is another month of collagen loss, expression line deepening, and UV damage. The cost of overthinking? Also compounds — you spend mental energy researching instead of acting. One decision ends both cycles.</p>
+    </section>
+
+    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
+
+    <section class="bridge fade-in">
+        <p class="section-label">The Protocol</p>
+        <h2>5 products. 4 minutes. Every pathway covered.</h2>
+        <p class="intro">The Full Protocol is the complete AM/PM system. Morning defense, night repair, every compound in the right order, with a card that tells you exactly what goes where. Open the box and stop thinking about it.</p>
+
+        <p class="routine-label">AM Routine &mdash; 2 Minutes</p>
+
+        <div class="protocol-step fade-in">
+            <span class="num">01</span>
+            <div>
                 <h3>AM Peptide Serum</h3>
                 <p class="compound">Matrixyl + Argireline</p>
-                <p>Collagen signaling and expression line defense. Matrixyl triggers new collagen synthesis. Argireline reduces line depth at the neuromuscular level. This is your morning offense — rebuilding while defending.</p>
+                <p>Collagen signaling and expression line defense. Matrixyl triggers synthesis. Argireline reduces line depth at the neuromuscular level. Your morning offense — rebuilding while defending.</p>
             </div>
         </div>
 
-        <div class="step">
-            <span class="step-num">02</span>
-            <div class="step-content">
+        <div class="protocol-step fade-in">
+            <span class="num">02</span>
+            <div>
                 <h3>Precision Derma Roller</h3>
-                <p class="compound">0.25mm micro-needling</p>
-                <p>Amplifies serum penetration 3-5x by creating micro-channels in the skin barrier. Apply immediately after the AM serum for maximum compound delivery.</p>
+                <p class="compound">0.25mm Micro-needling</p>
+                <p>Amplifies serum penetration 3-5x. Without this, compounds sit on the surface. With it, they reach the dermis where they work. Zero downtime at this depth.</p>
             </div>
         </div>
 
-        <div class="step">
-            <span class="step-num">03</span>
-            <div class="step-content">
+        <div class="protocol-step fade-in">
+            <span class="num">03</span>
+            <div>
                 <h3>SPF Moisturizer</h3>
                 <p class="compound">Niacinamide-infused defense</p>
-                <p>Seals in the AM compounds, blocks UV degradation, and evens skin tone. Niacinamide strengthens the barrier and reduces water loss. Everything before this step is offense. This is the shield.</p>
+                <p>Seals everything in, blocks UV degradation, evens tone. This is the shield. Everything before it was offense.</p>
             </div>
         </div>
 
-        <p class="routine-label">PM Routine &mdash; 2 minutes</p>
+        <div class="routine-spacer"></div>
+        <p class="routine-label">PM Routine &mdash; 2 Minutes</p>
 
-        <div class="step">
-            <span class="step-num">04</span>
-            <div class="step-content">
+        <div class="protocol-step fade-in">
+            <span class="num">04</span>
+            <div>
                 <h3>PM Night Serum</h3>
                 <p class="compound">Syn-Ake + Leuphasyl</p>
-                <p>Runs neuromuscular relaxation while you sleep. Expression lines flatten overnight. Your skin's repair window peaks between 10pm and 2am — this serum gives it the signal compounds to work with during that window.</p>
+                <p>Neuromuscular relaxation while you sleep. Expression lines flatten overnight. Your skin's repair peaks between 10pm-2am — this gives it the signal compounds to use during that window.</p>
             </div>
         </div>
 
-        <div class="step">
-            <span class="step-num">05</span>
-            <div class="step-content">
+        <div class="protocol-step fade-in">
+            <span class="num">05</span>
+            <div>
                 <h3>Cryo Roller</h3>
                 <p class="compound">Vasoconstriction + anti-inflammation</p>
-                <p>Cold therapy after the night serum. Constricts blood vessels to lock compounds into the tissue, reduces overnight puffiness, and kills inflammation before it accumulates. 2 minutes across face and jawline. Then sleep.</p>
+                <p>Cold therapy locks night serum into tissue, reduces puffiness, kills inflammation before it accumulates. 2 minutes across face and jawline. Then sleep.</p>
             </div>
         </div>
     </section>
 
-    <hr class="divider">
+    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
 
-    <section class="system-section">
-        <h2>Why the Full Protocol</h2>
-        <p>One box. Both routines. A protocol card that tells you exactly what to do, morning and night. No research required. No additional products needed. No decisions left to make. You handle showing up for 4 minutes a day. The system handles everything else.</p>
+    <section class="outcome fade-in">
+        <p class="section-label">The Outcome</p>
+        <h2>One decision. Then it's handled.</h2>
+        <p>No more researching. No more comparing products. No more "I'll start next month." The box arrives with everything you need and a card that tells you the order. Morning takes 2 minutes. Night takes 2 minutes. Your face stops being the system you ignore.</p>
+        <p>You've spent 6 months Googling. This is the answer. Buy it and stop thinking about it.</p>
         <p class="brand-line">Your face is a system. Treat it like one.</p>
     </section>
 
-    <hr class="divider">
+    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
 
-    <section class="final-cta">
-        <div class="price-main">$169</div>
-        <div class="price-sub">One-time purchase &middot; or $99/mo with auto-refills</div>
-        <div class="cta-group">
-            <a href="#" class="btn btn-primary">Buy Once &mdash; $169</a>
-            <a href="#" class="btn btn-secondary">Subscribe &mdash; $99/mo</a>
+    <section class="fade-in">
+        <p class="section-label">Why It Works</p>
+        <div class="proof-grid">
+            <div class="proof-item">
+                <div class="proof-num">5</div>
+                <h4>Products</h4>
+                <p>Two serums, two tools, one moisturizer. Nothing missing. Nothing unnecessary.</p>
+            </div>
+            <div class="proof-item">
+                <div class="proof-num">24hr</div>
+                <h4>Coverage</h4>
+                <p>AM serum defends. PM serum repairs. Every hour of the day is accounted for.</p>
+            </div>
+            <div class="proof-item">
+                <div class="proof-num">$5.63</div>
+                <h4>Per Day</h4>
+                <p>$169 for 30 days of complete AM/PM coverage. $3.30/day on subscription.</p>
+            </div>
+        </div>
+
+        <div class="objections">
+            <div class="objection">
+                <p class="q">"That's a lot of products."</p>
+                <p class="a">It's 5 products in 2 steps each. The protocol card shows you the exact order. It's less thinking than choosing what to eat for lunch.</p>
+            </div>
+            <div class="objection">
+                <p class="q">"Why not just start with the Foundation?"</p>
+                <p class="a">You can. But if you know you'll want the PM routine too, this saves you $79 vs. buying separately. And you get the cryo roller included.</p>
+            </div>
+            <div class="objection">
+                <p class="q">"$169 feels expensive."</p>
+                <p class="a">$5.63/day. Less than your lunch. And you're covering every pathway — collagen signaling, expression lines, UV defense, night repair, inflammation. One box handles all of it.</p>
+            </div>
+            <div class="objection">
+                <p class="q">"What if I forget the routine?"</p>
+                <p class="a">The protocol card lives on your bathroom counter. AM side, PM side. You'll spend more time reading this objection than running the morning routine.</p>
+            </div>
         </div>
     </section>
 
-    <hr class="divider">
+    <div class="section-spacer"></div><hr class="section-divider">
 
-    <section class="proof-section">
-        <h2>Results</h2>
-        <div class="proof-placeholder">Real user results — coming soon</div>
-    </section>
+    <div class="final-cta fade-in">
+        <div class="price">$169</div>
+        <p class="price-context">One-time purchase &middot; or <strong>$99/mo</strong> with auto-refills</p>
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">Get the Full Protocol &mdash; $169</a>
+            <a href="#" class="btn btn-secondary">Subscribe &mdash; $99/mo</a>
+        </div>
+        <p class="guarantee">Free shipping &middot; AM/PM protocol card included &middot; Cancel subscription anytime</p>
+    </div>
 
-    <footer>
-        &copy; 2026 DuskCo &middot; Peptide Protocol
-    </footer>
+    <footer>&copy; 2026 DuskCo &middot; Peptide Protocol</footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.12, rootMargin: '-20px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
