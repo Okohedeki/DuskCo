@@ -7,71 +7,107 @@
     <meta name="description" content="Lost the weight. Face looks 10 years older. Sound familiar? Two serums, one mask, one tool. The rebuild starts now. $159 or $85/mo.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --bg: #0a0a0a; --border: #1a1a1a; --text: #e0e0e0; --text-dim: #888; --text-muted: #555; --white: #fff; --accent: #c8a97e; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        nav { padding: 20px 24px; border-bottom: 1px solid var(--border); }
+        :root {
+            --bg: #f6f2ed;
+            --bg-card: #fff;
+            --border: #e2dcd4;
+            --text: #2c2825;
+            --text-dim: #6b6560;
+            --text-muted: #9b9590;
+            --accent: #8b6d4f;
+            --accent-dark: #6b4f35;
+            --white: #fff;
+        }
+        body { background: var(--bg); color: var(--text); font-family: 'DM Sans', 'Helvetica Neue', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+        nav { padding: 20px 24px; border-bottom: 1px solid var(--border); background: var(--white); }
         nav a { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; }
-        nav a:hover { color: var(--text-dim); }
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 80px 24px; position: relative; }
-        .hero::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 80px; background: linear-gradient(to bottom, var(--border), transparent); }
-        .hero .label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards; }
-        .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--white); line-height: 1.3; max-width: 700px; opacity: 0; animation: fadeUp 0.8s ease 0.15s forwards; }
-        .hero h1 strong { font-weight: 500; color: var(--accent); }
-        .hero .sub { margin-top: 20px; font-size: clamp(0.9rem, 2vw, 1.05rem); color: var(--text-dim); max-width: 540px; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
-        .hero .cta-group { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fadeUp 0.8s ease 0.45s forwards; }
+        nav a:hover { color: var(--text); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 80px 24px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero .label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards; }
+        .hero h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 400; color: var(--text); line-height: 1.25; max-width: 680px; opacity: 0; animation: fadeUp 0.8s ease 0.15s forwards; }
+        .hero h1 em { color: var(--accent); font-style: normal; }
+        .hero .sub { margin-top: 24px; font-size: clamp(0.92rem, 2vw, 1.05rem); color: var(--text-dim); max-width: 500px; line-height: 1.75; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+        .hero .cta-group { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fadeUp 0.8s ease 0.45s forwards; }
+
         @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-        .btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding: 14px 36px; transition: all 0.25s ease; cursor: pointer; }
-        .btn-primary { color: var(--bg); background: var(--white); border: 1px solid var(--white); }
-        .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
-        .btn-secondary { color: var(--white); background: transparent; border: 1px solid #333; }
-        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-        section { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-        .section-divider { width: 100%; max-width: 720px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
+
+        .btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 14px 36px; border-radius: 2px; transition: all 0.25s ease; }
+        .btn-primary { color: var(--white); background: var(--accent); border: 1px solid var(--accent); }
+        .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+        .btn-secondary { color: var(--accent); background: transparent; border: 1px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--accent); background: rgba(139,109,79,0.05); }
+
+        section { max-width: 680px; margin: 0 auto; padding: 0 24px; }
         .section-spacer { height: 80px; }
-        .section-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; }
-        .agitate h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 32px; }
-        .agitate p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 24px; }
-        .agitate .stat { display: flex; align-items: baseline; gap: 16px; margin: 40px 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .agitate .stat-number { font-size: 2.5rem; font-weight: 200; color: var(--accent); white-space: nowrap; }
-        .agitate .stat-text { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
-        .bridge h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 16px; }
+        .section-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 32px; }
+
+        .agitate h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; color: var(--text); line-height: 1.35; margin-bottom: 28px; }
+        .agitate p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 22px; }
+        .agitate .stat { display: flex; align-items: baseline; gap: 20px; margin: 36px 0; padding: 28px 32px; background: var(--white); border: 1px solid var(--border); border-radius: 2px; }
+        .agitate .stat-number { font-family: 'DM Serif Display', serif; font-size: 2.8rem; font-weight: 400; color: var(--accent); white-space: nowrap; }
+        .agitate .stat-text { font-size: 0.85rem; color: var(--text-dim); line-height: 1.65; }
+
+        .bridge h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; color: var(--text); line-height: 1.35; margin-bottom: 16px; }
         .bridge .intro { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 40px; }
-        .protocol-step { display: flex; gap: 24px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-        .protocol-step:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .protocol-step .num { font-size: 3rem; font-weight: 200; color: #1a1a1a; line-height: 1; min-width: 48px; }
-        .protocol-step h3 { font-size: 0.95rem; font-weight: 500; color: var(--white); letter-spacing: 0.03em; margin-bottom: 4px; }
-        .protocol-step .compound { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+
+        .protocol-step { display: flex; gap: 28px; margin-bottom: 0; padding: 32px 0; border-bottom: 1px solid var(--border); }
+        .protocol-step:last-of-type { border-bottom: none; }
+        .protocol-step .num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--border); line-height: 1; min-width: 44px; }
+        .protocol-step h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+        .protocol-step .compound { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 500; }
         .protocol-step p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.75; }
+
         .outcome { text-align: center; }
-        .outcome h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 28px; }
-        .outcome p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; max-width: 560px; margin: 0 auto 20px; }
-        .outcome .brand-line { margin-top: 32px; font-size: 1rem; color: var(--white); font-style: italic; }
-        .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 32px; }
-        .proof-item { background: var(--bg); padding: 32px 24px; text-align: center; }
-        .proof-item .proof-num { font-size: 1.6rem; font-weight: 300; color: var(--accent); margin-bottom: 8px; }
-        .proof-item h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); font-weight: 500; margin-bottom: 8px; }
-        .proof-item p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
-        .objections { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 40px; }
-        .objection { background: var(--bg); padding: 28px 24px; }
-        .objection .q { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-bottom: 10px; }
+        .outcome h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; color: var(--text); line-height: 1.35; margin-bottom: 24px; }
+        .outcome p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; max-width: 540px; margin: 0 auto 18px; }
+        .outcome .brand-line { margin-top: 28px; font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--text); }
+
+        .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+        .proof-item { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 28px 20px; text-align: center; }
+        .proof-item .proof-num { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 6px; }
+        .proof-item h4 { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); font-weight: 600; margin-bottom: 8px; }
+        .proof-item p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
+
+        .objections { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 36px; }
+        .objection { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 24px; }
+        .objection .q { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-bottom: 8px; }
         .objection .a { font-size: 0.82rem; color: var(--text-dim); line-height: 1.6; }
-        .final-cta { text-align: center; padding: 80px 24px; max-width: 720px; margin: 0 auto; }
-        .final-cta .price { font-size: clamp(2rem, 5vw, 3rem); font-weight: 200; color: var(--white); }
+
+        .final-cta { text-align: center; padding: 80px 24px; max-width: 680px; margin: 0 auto; }
+        .final-cta .price { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--text); }
         .final-cta .price-context { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); }
         .final-cta .price-context strong { color: var(--text-dim); font-weight: 500; }
-        .final-cta .cta-group { margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .final-cta .guarantee { margin-top: 24px; font-size: 0.75rem; color: var(--text-muted); }
-        footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); font-size: 0.7rem; color: #333; letter-spacing: 0.1em; }
-        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .final-cta .cta-group { margin-top: 32px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .final-cta .guarantee { margin-top: 20px; font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.03em; }
+
+        .divider { max-width: 680px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
+
+        footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.08em; background: var(--white); }
+
+        .fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+
         @media (max-width: 768px) {
-            .hero { min-height: 90vh; padding: 60px 20px; } .section-spacer { height: 56px; } section { padding: 0 20px; }
-            .protocol-step { gap: 16px; } .protocol-step .num { font-size: 2.2rem; min-width: 36px; }
+            .hero { min-height: 90vh; padding: 60px 20px; }
+            .section-spacer { height: 56px; }
+            section { padding: 0 20px; }
+            .protocol-step { gap: 16px; }
+            .protocol-step .num { font-size: 1.8rem; min-width: 32px; }
             .proof-grid, .objections { grid-template-columns: 1fr; }
-            .btn { padding: 12px 28px; width: 100%; text-align: center; } .final-cta { padding: 56px 20px; }
+            .btn { padding: 13px 28px; width: 100%; text-align: center; }
+            .final-cta { padding: 56px 20px; }
+            .agitate .stat { flex-direction: column; gap: 12px; }
         }
     </style>
 </head>
@@ -80,7 +116,7 @@
 
     <div class="hero">
         <p class="label">Peptide Protocol</p>
-        <h1>Everyone told you to lose the weight. <strong>Nobody told you what it would do to your face.</strong></h1>
+        <h1>Everyone told you to lose the weight. <em>Nobody told you what it would do to your face.</em></h1>
         <p class="sub">Down 30-40 pounds. Face looks 10 years older. Hollow cheeks. Loose jawline. Deflated skin that didn't tighten with the fat. Sound familiar? This protocol forces the rebuild.</p>
         <div class="cta-group">
             <a href="#" class="btn btn-primary">Start the Rebuild &mdash; $159</a>
@@ -93,20 +129,16 @@
     <section class="agitate fade-in">
         <p class="section-label">The Problem</p>
         <h2>You did the hard part. You lost the weight. And now your face looks worse than before.</h2>
-
         <p>You did everything right. Cut the calories. Hit the gym. Maybe used Ozempic or Mounjaro. The weight came off. People congratulated you. But then you looked in the mirror and saw something nobody warned you about.</p>
-
         <p>Your face deflated. Cheeks hollowed out. Jawline went from soft to saggy. The skin that was stretched over fat is now hanging over bone with nothing in between. You traded one problem for another — and this one is harder to hide.</p>
-
         <div class="stat">
             <span class="stat-number">30%</span>
-            <span class="stat-text">Of rapid weight loss comes from lean tissue, including the collagen matrix that holds facial structure. When fat disappears faster than skin can remodel, the result is volume collapse — hollows, laxity, and a face that looks older, not younger.</span>
+            <span class="stat-text">Of rapid weight loss comes from lean tissue, including the collagen matrix that holds facial structure. When fat disappears faster than skin can remodel, the result is volume collapse.</span>
         </div>
-
-        <p>The fitness industry celebrates the weight loss. Nobody talks about the facial fallout. Dermatologists will offer fillers at $800+ per session. Plastic surgeons will suggest a facelift. Nobody's offering you a system that signals your skin to tighten and rebuild on its own. That's what this is.</p>
+        <p>The fitness industry celebrates the weight loss. Nobody talks about the facial fallout. Dermatologists will offer fillers at $800+ per session. Plastic surgeons will suggest a facelift. Nobody's offering you a system that signals your skin to tighten and rebuild on its own.</p>
     </section>
 
-    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
+    <div class="section-spacer"></div><hr class="divider"><div class="section-spacer"></div>
 
     <section class="bridge fade-in">
         <p class="section-label">The Protocol</p>
@@ -126,8 +158,8 @@
             <span class="num">02</span>
             <div>
                 <h3>Collagen Signal Serum</h3>
-                <p class="compound">Matrixyl + SNAP-8</p>
-                <p>Rapid weight loss degrades the collagen matrix faster than it regenerates. Matrixyl signals new collagen synthesis to rebuild what collapsed. SNAP-8 smooths the expression lines that become more visible on volume-depleted skin. Two compounds forcing regeneration where your face needs it most.</p>
+                <p class="compound">Matrixyl + SNAP-8 &mdash; Collagen synthesis + expression line smoothing</p>
+                <p>Rapid weight loss degrades the collagen matrix faster than it regenerates. Matrixyl signals new collagen synthesis to rebuild what collapsed. SNAP-8 smooths the expression lines that become more visible on volume-depleted skin. Two compounds rebuilding the degraded matrix.</p>
             </div>
         </div>
 
@@ -135,8 +167,8 @@
             <span class="num">03</span>
             <div>
                 <h3>Red Light Therapy Mask</h3>
-                <p class="compound">630-660nm Photobiomodulation</p>
-                <p>Stimulates mitochondrial ATP production — the energy that powers cellular repair and collagen activation. Red light doesn't just treat the surface. It accelerates the remodeling signals from both serums at the cellular level. 10 minutes per session. The mask looks like tech because it is.</p>
+                <p class="compound">630-660nm &mdash; Mitochondrial ATP, accelerates remodeling</p>
+                <p>Stimulates mitochondrial ATP production — the energy that powers cellular repair and collagen activation. Red light doesn't just treat the surface. It accelerates the remodeling signals from both serums at the cellular level. 10 minutes per session.</p>
             </div>
         </div>
 
@@ -144,13 +176,13 @@
             <span class="num">04</span>
             <div>
                 <h3>Stainless Steel Contour Tool</h3>
-                <p class="compound">Lymphatic drainage + structural sculpting</p>
+                <p class="compound">Lymphatic drainage + sculpting</p>
                 <p>Post-weight-loss faces hold fluid that masks remaining bone structure. As the serums tighten and the mask repairs, the tool sculpts definition back into the structure emerging underneath. Firm, deliberate strokes along jaw and cheekbones. Not gentle. Mechanical.</p>
             </div>
         </div>
     </section>
 
-    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
+    <div class="section-spacer"></div><hr class="divider"><div class="section-spacer"></div>
 
     <section class="outcome fade-in">
         <p class="section-label">The Outcome</p>
@@ -160,7 +192,7 @@
         <p class="brand-line">Your face is a system. Treat it like one.</p>
     </section>
 
-    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
+    <div class="section-spacer"></div><hr class="divider"><div class="section-spacer"></div>
 
     <section class="fade-in">
         <p class="section-label">Why It Works</p>
@@ -202,7 +234,7 @@
         </div>
     </section>
 
-    <div class="section-spacer"></div><hr class="section-divider">
+    <div class="section-spacer"></div><hr class="divider">
 
     <div class="final-cta fade-in">
         <div class="price">$159</div>
@@ -214,11 +246,11 @@
         <p class="guarantee">Free shipping &middot; Protocol card included &middot; Cancel subscription anytime</p>
     </div>
 
-    <footer>&copy; 2026 DuskCo &middot; Peptide Protocol</footer>
+    <footer>&copy; 2026 Peptide Protocol</footer>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.12, rootMargin: '-20px' });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>

@@ -3,75 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peptide Protocol — DuskCo</title>
+    <title>Peptide Protocol</title>
     <meta name="description" content="Men's topical peptide skincare. Clinical-grade compounds. System-based routines. Your face is a system — treat it like one.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --bg: #0a0a0a; --border: #1a1a1a; --text: #e0e0e0; --text-dim: #888; --text-muted: #555; --white: #fff; --accent: #c8a97e; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-        nav { padding: 20px 24px; border-bottom: 1px solid var(--border); }
-        nav a { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; }
-        nav a:hover { color: var(--text-dim); }
+        :root {
+            --bg: #f6f2ed;
+            --bg-card: #fff;
+            --border: #e2dcd4;
+            --text: #2c2825;
+            --text-dim: #6b6560;
+            --text-muted: #9b9590;
+            --accent: #8b6d4f;
+            --accent-dark: #6b4f35;
+            --white: #fff;
+        }
+        body { background: var(--bg); color: var(--text); font-family: 'DM Sans', 'Helvetica Neue', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
         header {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 80px 24px 20px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 80px 24px 60px;
             text-align: center;
         }
         header .label {
             font-size: 0.65rem;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: var(--accent);
             margin-bottom: 16px;
         }
         header h1 {
-            font-size: clamp(1.8rem, 4vw, 2.4rem);
-            font-weight: 300;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--white);
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+            font-weight: 400;
+            color: var(--text);
         }
         header .brand-line {
             margin-top: 16px;
-            font-size: 0.95rem;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1rem;
             color: var(--text-dim);
-            font-style: italic;
         }
         header .intro {
-            margin-top: 20px;
-            font-size: 0.85rem;
+            margin: 20px auto 0;
+            font-size: 0.88rem;
             color: var(--text-muted);
             line-height: 1.7;
-            max-width: 560px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 520px;
         }
 
         main {
-            width: 100%;
-            max-width: 800px;
+            max-width: 740px;
             margin: 0 auto;
             padding: 48px 24px 80px;
         }
 
-        .bundles { display: grid; gap: 2px; background: var(--border); border: 1px solid var(--border); }
+        .bundles { display: grid; gap: 16px; }
 
         .bundle {
-            background: var(--bg);
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 2px;
             padding: 32px;
-            transition: background 0.25s ease;
             display: block;
             text-decoration: none;
             color: inherit;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
         }
-        .bundle:hover { background: var(--bg-raised, #111); }
+        .bundle:hover {
+            border-color: var(--accent);
+            box-shadow: 0 2px 12px rgba(139,109,79,0.08);
+        }
 
         .bundle-header {
             display: flex;
@@ -80,35 +86,33 @@
             flex-wrap: wrap;
             gap: 8px;
         }
-
         .bundle h2 {
             font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.06em;
+            font-weight: 600;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
-            color: var(--white);
+            color: var(--text);
         }
-
         .bundle .price {
-            font-size: 0.9rem;
-            color: var(--white);
-            font-weight: 400;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1rem;
+            color: var(--text);
         }
         .bundle .price .sub {
+            font-family: 'DM Sans', sans-serif;
             color: var(--text-muted);
             font-size: 0.78rem;
-            font-weight: 400;
         }
 
         .bundle .pain {
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 0.88rem;
             color: var(--text-dim);
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         .bundle .products-list {
-            margin-top: 14px;
+            margin-top: 16px;
             padding-left: 0;
             list-style: none;
             font-size: 0.78rem;
@@ -118,30 +122,32 @@
         .bundle .products-list li::before {
             content: '—';
             margin-right: 8px;
-            color: #2a2a2a;
+            color: var(--border);
         }
 
         .bundle .cta-hint {
-            margin-top: 16px;
+            margin-top: 18px;
             font-size: 0.7rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--accent);
+            font-weight: 500;
             transition: color 0.2s;
         }
-        .bundle:hover .cta-hint { color: var(--white); }
+        .bundle:hover .cta-hint { color: var(--accent-dark); }
 
         footer {
             padding: 32px 24px;
             text-align: center;
             border-top: 1px solid var(--border);
             font-size: 0.7rem;
-            color: #333;
-            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            background: var(--white);
         }
 
         @media (max-width: 600px) {
-            header { padding: 48px 16px 16px; }
+            header { padding: 48px 16px 40px; }
             main { padding: 24px 16px 48px; }
             .bundle { padding: 24px 20px; }
             .bundle-header { flex-direction: column; gap: 4px; }
@@ -149,10 +155,6 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="../">&larr; DuskCo</a>
-    </nav>
-
     <header>
         <p class="label">Men's Skin Performance</p>
         <h1>Peptide Protocol</h1>
@@ -162,7 +164,6 @@
 
     <main>
         <div class="bundles">
-
             <a href="the-foundation/" class="bundle">
                 <div class="bundle-header">
                     <h2>The Foundation</h2>
@@ -235,12 +236,9 @@
                 </ul>
                 <p class="cta-hint">View Protocol &rarr;</p>
             </a>
-
         </div>
     </main>
 
-    <footer>
-        &copy; 2026 DuskCo &middot; Peptide Protocol
-    </footer>
+    <footer>&copy; 2026 Peptide Protocol</footer>
 </body>
 </html>

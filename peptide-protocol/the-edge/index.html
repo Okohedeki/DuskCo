@@ -4,74 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Edge — Peptide Protocol</title>
-    <meta name="description" content="You didn't lose your jawline. It's under fluid and slack skin. 3 tools, 3 biological pathways, one outcome: a sharper face. $89 or $65/mo.">
+    <meta name="description" content="You didn't lose your jawline. It's under fluid and slack skin. 3 tools. 3 biological pathways. One outcome: a sharper face. $89 or $65/mo.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --bg: #0a0a0a; --bg-raised: #111; --border: #1a1a1a; --text: #e0e0e0; --text-dim: #888; --text-muted: #555; --white: #fff; --accent: #c8a97e; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        nav { padding: 20px 24px; border-bottom: 1px solid var(--border); }
+        :root {
+            --bg: #f6f2ed;
+            --bg-card: #fff;
+            --border: #e2dcd4;
+            --text: #2c2825;
+            --text-dim: #6b6560;
+            --text-muted: #9b9590;
+            --accent: #8b6d4f;
+            --accent-dark: #6b4f35;
+            --white: #fff;
+        }
+        body { background: var(--bg); color: var(--text); font-family: 'DM Sans', 'Helvetica Neue', sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+        nav { padding: 20px 24px; border-bottom: 1px solid var(--border); background: var(--white); }
         nav a { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; }
-        nav a:hover { color: var(--text-dim); }
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 80px 24px; position: relative; }
-        .hero::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 80px; background: linear-gradient(to bottom, var(--border), transparent); }
-        .hero .label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards; }
-        .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--white); line-height: 1.3; max-width: 700px; opacity: 0; animation: fadeUp 0.8s ease 0.15s forwards; }
-        .hero h1 strong { font-weight: 500; color: var(--accent); }
-        .hero .sub { margin-top: 20px; font-size: clamp(0.9rem, 2vw, 1.05rem); color: var(--text-dim); max-width: 520px; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
-        .hero .cta-group { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fadeUp 0.8s ease 0.45s forwards; }
+        nav a:hover { color: var(--text); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 80px 24px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero .label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards; }
+        .hero h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 400; color: var(--text); line-height: 1.25; max-width: 680px; opacity: 0; animation: fadeUp 0.8s ease 0.15s forwards; }
+        .hero h1 em { color: var(--accent); font-style: normal; }
+        .hero .sub { margin-top: 24px; font-size: clamp(0.92rem, 2vw, 1.05rem); color: var(--text-dim); max-width: 500px; line-height: 1.75; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; }
+        .hero .cta-group { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: fadeUp 0.8s ease 0.45s forwards; }
+
         @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-        .btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding: 14px 36px; transition: all 0.25s ease; cursor: pointer; }
-        .btn-primary { color: var(--bg); background: var(--white); border: 1px solid var(--white); }
-        .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
-        .btn-secondary { color: var(--white); background: transparent; border: 1px solid #333; }
-        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-        section { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-        .section-divider { width: 100%; max-width: 720px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
+
+        .btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 14px 36px; border-radius: 2px; transition: all 0.25s ease; }
+        .btn-primary { color: var(--white); background: var(--accent); border: 1px solid var(--accent); }
+        .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+        .btn-secondary { color: var(--accent); background: transparent; border: 1px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--accent); background: rgba(139,109,79,0.05); }
+
+        section { max-width: 680px; margin: 0 auto; padding: 0 24px; }
         .section-spacer { height: 80px; }
-        .section-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; }
-        .agitate h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 32px; }
-        .agitate p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 24px; }
-        .agitate .stat { display: flex; align-items: baseline; gap: 16px; margin: 40px 0; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .agitate .stat-number { font-size: 2.5rem; font-weight: 200; color: var(--accent); white-space: nowrap; }
-        .agitate .stat-text { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
-        .bridge h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 16px; }
+        .section-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 32px; }
+
+        .agitate h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; color: var(--text); line-height: 1.35; margin-bottom: 28px; }
+        .agitate p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 22px; }
+        .agitate .stat { display: flex; align-items: baseline; gap: 20px; margin: 36px 0; padding: 28px 32px; background: var(--white); border: 1px solid var(--border); border-radius: 2px; }
+        .agitate .stat-number { font-family: 'DM Serif Display', serif; font-size: 2.8rem; font-weight: 400; color: var(--accent); white-space: nowrap; }
+        .agitate .stat-text { font-size: 0.85rem; color: var(--text-dim); line-height: 1.65; }
+
+        .bridge h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; color: var(--text); line-height: 1.35; margin-bottom: 16px; }
         .bridge .intro { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 40px; }
-        .protocol-step { display: flex; gap: 24px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-        .protocol-step:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .protocol-step .num { font-size: 3rem; font-weight: 200; color: #1a1a1a; line-height: 1; min-width: 48px; }
-        .protocol-step h3 { font-size: 0.95rem; font-weight: 500; color: var(--white); letter-spacing: 0.03em; margin-bottom: 4px; }
-        .protocol-step .compound { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+
+        .protocol-step { display: flex; gap: 28px; margin-bottom: 0; padding: 32px 0; border-bottom: 1px solid var(--border); }
+        .protocol-step:last-of-type { border-bottom: none; }
+        .protocol-step .num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--border); line-height: 1; min-width: 44px; }
+        .protocol-step h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+        .protocol-step .compound { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 500; }
         .protocol-step p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.75; }
+
         .outcome { text-align: center; }
-        .outcome h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 28px; }
-        .outcome p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; max-width: 560px; margin: 0 auto 20px; }
-        .outcome .brand-line { margin-top: 32px; font-size: 1rem; color: var(--white); font-style: italic; }
-        .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 32px; }
-        .proof-item { background: var(--bg); padding: 32px 24px; text-align: center; }
-        .proof-item .proof-num { font-size: 1.6rem; font-weight: 300; color: var(--accent); margin-bottom: 8px; }
-        .proof-item h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); font-weight: 500; margin-bottom: 8px; }
-        .proof-item p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.6; }
-        .objections { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 40px; }
-        .objection { background: var(--bg); padding: 28px 24px; }
-        .objection .q { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-bottom: 10px; }
+        .outcome h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; color: var(--text); line-height: 1.35; margin-bottom: 24px; }
+        .outcome p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; max-width: 540px; margin: 0 auto 18px; }
+        .outcome .brand-line { margin-top: 28px; font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--text); }
+
+        .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+        .proof-item { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 28px 20px; text-align: center; }
+        .proof-item .proof-num { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 6px; }
+        .proof-item h4 { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); font-weight: 600; margin-bottom: 8px; }
+        .proof-item p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
+
+        .objections { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 36px; }
+        .objection { background: var(--white); border: 1px solid var(--border); border-radius: 2px; padding: 24px; }
+        .objection .q { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin-bottom: 8px; }
         .objection .a { font-size: 0.82rem; color: var(--text-dim); line-height: 1.6; }
-        .final-cta { text-align: center; padding: 80px 24px; max-width: 720px; margin: 0 auto; }
-        .final-cta .price { font-size: clamp(2rem, 5vw, 3rem); font-weight: 200; color: var(--white); }
+
+        .final-cta { text-align: center; padding: 80px 24px; max-width: 680px; margin: 0 auto; }
+        .final-cta .price { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--text); }
         .final-cta .price-context { margin-top: 8px; font-size: 0.85rem; color: var(--text-muted); }
         .final-cta .price-context strong { color: var(--text-dim); font-weight: 500; }
-        .final-cta .cta-group { margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .final-cta .guarantee { margin-top: 24px; font-size: 0.75rem; color: var(--text-muted); }
-        footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); font-size: 0.7rem; color: #333; letter-spacing: 0.1em; }
-        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .final-cta .cta-group { margin-top: 32px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .final-cta .guarantee { margin-top: 20px; font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.03em; }
+
+        .divider { max-width: 680px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
+
+        footer { padding: 32px 24px; text-align: center; border-top: 1px solid var(--border); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.08em; background: var(--white); }
+
+        .fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+
         @media (max-width: 768px) {
-            .hero { min-height: 90vh; padding: 60px 20px; } .section-spacer { height: 56px; } section { padding: 0 20px; }
-            .protocol-step { gap: 16px; } .protocol-step .num { font-size: 2.2rem; min-width: 36px; }
+            .hero { min-height: 90vh; padding: 60px 20px; }
+            .section-spacer { height: 56px; }
+            section { padding: 0 20px; }
+            .protocol-step { gap: 16px; }
+            .protocol-step .num { font-size: 1.8rem; min-width: 32px; }
             .proof-grid, .objections { grid-template-columns: 1fr; }
-            .btn { padding: 12px 28px; width: 100%; text-align: center; } .final-cta { padding: 56px 20px; }
+            .btn { padding: 13px 28px; width: 100%; text-align: center; }
+            .final-cta { padding: 56px 20px; }
+            .agitate .stat { flex-direction: column; gap: 12px; }
         }
     </style>
 </head>
@@ -80,11 +116,11 @@
 
     <div class="hero">
         <p class="label">Peptide Protocol</p>
-        <h1>You didn't lose your jawline. It's under <strong>fluid and slack skin.</strong> Get it back.</h1>
+        <h1>You didn't lose your jawline. It's under <em>fluid and slack skin.</em> Get it back.</h1>
         <p class="sub">Your face has 43 muscles. When's the last time you trained one? The structure is still there — it's masked by retention and laxity. This system strips it back.</p>
         <div class="cta-group">
-            <a href="#" class="btn btn-primary">Start the Protocol &mdash; $89</a>
-            <a href="#" class="btn btn-secondary">Subscribe &mdash; $65/mo</a>
+            <a href="#" class="btn btn-primary">Start the Protocol — $89</a>
+            <a href="#" class="btn btn-secondary">Subscribe — $65/mo</a>
         </div>
     </div>
 
@@ -93,122 +129,93 @@
     <section class="agitate fade-in">
         <p class="section-label">The Problem</p>
         <h2>The difference between looking tired and looking sharp is about 2mm of fluid.</h2>
-
-        <p>You see it in photos. Side profile doesn't hit like it used to. Jawline's softer. Cheekbones are buried. You're not overweight — you're holding subcutaneous fluid and your skin has lost the tension that held definition in place.</p>
-
-        <p>You train your chest, your back, your legs. You've never trained the muscle responsible for how your jaw looks. And the skin sitting over your bone structure? It's been degrading silently — losing firmness, elasticity, and the collagen that kept everything tight.</p>
-
+        <p>Your jawline used to cut. Now it blends into your neck. Your cheekbones used to cast shadows — now they're buried under a layer of puffiness you can't seem to shake. You're not fat. You're not old. But your face doesn't look like it belongs to someone who trains five days a week.</p>
+        <p>Here's what's actually happening: subcutaneous fluid is pooling where it shouldn't. Your skin has lost the tension that kept everything taut. And the muscles underneath — the ones that literally define the architecture of your face — have never been loaded. Not once.</p>
+        <p>You've got 43 muscles in your face and you've never trained a single one. Meanwhile the masseter — the muscle responsible for jaw width and definition — is atrophying from a lifetime of soft food and zero resistance.</p>
         <div class="stat">
             <span class="stat-number">43</span>
             <span class="stat-text">Muscles in the human face. The masseter — the muscle that defines your jawline — responds to progressive resistance just like any other muscle. Most men have never trained it once.</span>
         </div>
-
-        <p>The grooming industry sells you moisturizer and calls it done. Plastic surgeons offer implants and fillers. Nobody's offering you a system that targets all three pathways to facial definition: skin tightening, fluid drainage, and muscle development. Until now.</p>
+        <p>The alternatives? Moisturizer won't drain fluid. It won't build muscle. It won't tighten skin that's already lost elasticity. Plastic surgery jumps straight to the most invasive option without addressing the three underlying causes. And nobody — not dermatologists, not grooming brands, not Reddit — is offering a system that targets all three pathways simultaneously.</p>
     </section>
 
-    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
+    <div class="section-spacer"></div><hr class="divider"><div class="section-spacer"></div>
 
     <section class="bridge fade-in">
         <p class="section-label">The Protocol</p>
         <h2>3 tools. 3 biological pathways. One outcome: a sharper face.</h2>
-        <p class="intro">The Edge targets definition through three mechanisms simultaneously. Skin remodeling tightens the surface. Lymphatic drainage removes the fluid blurring your structure. Masseter training builds the muscle underneath. Each one compounds the others.</p>
+        <p class="intro">The Edge targets facial definition through three simultaneous mechanisms: skin remodeling at the cellular level, lymphatic drainage to strip subcutaneous fluid, and progressive resistance training for the masseter muscle. Each tool addresses a different pathway. Together, they produce one visible outcome — structure.</p>
 
         <div class="protocol-step fade-in">
             <span class="num">01</span>
             <div>
                 <h3>GHK-Cu Copper Peptide Serum</h3>
                 <p class="compound">Skin remodeling + tightening</p>
-                <p>GHK-Cu is one of the most studied compounds in skin remodeling. It triggers tissue tightening and collagen restructuring at the cellular level — firmer, denser skin that holds definition instead of blurring it. Apply to jawline, cheekbones, and under-chin where laxity compounds.</p>
+                <p>GHK-Cu is one of the most studied peptides in regenerative biology. It triggers tissue remodeling — tightening existing skin while restructuring the collagen matrix beneath it. Applied daily, it reverses the laxity that's blurring your bone structure. This isn't moisturizing. It's signaling your skin to rebuild from the inside out.</p>
             </div>
         </div>
-
         <div class="protocol-step fade-in">
             <span class="num">02</span>
             <div>
                 <h3>Stainless Steel Contour Tool</h3>
                 <p class="compound">Lymphatic drainage + sculpting</p>
-                <p>Retained subcutaneous fluid masks your bone structure. The steel contour tool moves it through firm, deliberate strokes along the jaw and orbital bone. This isn't gentle spa motions — it's mechanical drainage. You'll see the difference after the first session. The effect compounds daily.</p>
+                <p>Subcutaneous fluid doesn't move itself. This tool moves it — through firm, deliberate strokes along the lymphatic pathways of the face and jaw. It's not gua sha from a spa. It's a clinical-grade stainless steel instrument designed for one thing: pulling retained fluid out of the tissue that's masking your structure. Two minutes, every morning.</p>
             </div>
         </div>
-
         <div class="protocol-step fade-in">
             <span class="num">03</span>
             <div>
-                <h3>Mastic Gum</h3>
-                <p class="compound">30-day supply &mdash; masseter hypertrophy</p>
-                <p>The masseter is the muscle that defines jaw width and sharpness. Mastic gum provides progressive chewing resistance — same principle as any hypertrophy protocol. 20-30 minutes of daily chewing. Visible jaw width increase within 4-6 weeks. You train every other muscle. This is the one people see.</p>
+                <h3>Mastic Gum — 30-Day Supply</h3>
+                <p class="compound">Masseter hypertrophy</p>
+                <p>Mastic gum is approximately 10x harder than regular chewing gum. It functions as progressive resistance training for the masseter muscle — the same muscle that determines jaw width and angularity. Chew daily, increase duration weekly. Visible jaw width increase in 4–6 weeks. Same principle as any hypertrophy program: progressive overload, consistent stimulus, visible adaptation.</p>
             </div>
         </div>
     </section>
 
-    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
+    <div class="section-spacer"></div><hr class="divider"><div class="section-spacer"></div>
 
     <section class="outcome fade-in">
         <p class="section-label">The Outcome</p>
         <h2>Definition isn't cosmetic. It's structural. And structure can be built.</h2>
-        <p>Tighter skin over drained tissue over a developed muscle. That's what definition is. Not genetics. Not surgery. Not angles. The serum remodels. The tool drains. The gum builds. Each compounds the others. One tool gives you a temporary effect. The system gives you a permanent one.</p>
+        <p>Tight skin over drained tissue over developed muscle. That's what definition actually is. Not genetics. Not surgery. Not luck. It's three layers, each addressed by a different tool, each reinforcing the others.</p>
+        <p>Your cheekbones reappear. Your jawline sharpens. The soft, puffy look that made you seem tired or out of shape — gone. Replaced by the angular structure that was always there, just buried.</p>
         <p class="brand-line">Your face is a system. Treat it like one.</p>
     </section>
 
-    <div class="section-spacer"></div><hr class="section-divider"><div class="section-spacer"></div>
+    <div class="section-spacer"></div><hr class="divider"><div class="section-spacer"></div>
 
     <section class="fade-in">
         <p class="section-label">Why It Works</p>
         <div class="proof-grid">
-            <div class="proof-item">
-                <div class="proof-num">3</div>
-                <h4>Pathways</h4>
-                <p>Skin remodeling, fluid drainage, and muscle hypertrophy — targeted simultaneously</p>
-            </div>
-            <div class="proof-item">
-                <div class="proof-num">2mm</div>
-                <h4>Of Fluid</h4>
-                <p>The difference between looking tired and looking sharp. The contour tool moves it daily.</p>
-            </div>
-            <div class="proof-item">
-                <div class="proof-num">4-6wk</div>
-                <h4>Visible Results</h4>
-                <p>Masseter hypertrophy follows the same timeline as any progressive resistance protocol</p>
-            </div>
+            <div class="proof-item"><div class="proof-num">3</div><h4>Pathways</h4><p>Skin remodeling, fluid drainage, and muscle hypertrophy — addressed simultaneously, not sequentially</p></div>
+            <div class="proof-item"><div class="proof-num">2mm</div><h4>Of Fluid</h4><p>The difference between looking tired and looking sharp. The contour tool moves it out of the tissue daily</p></div>
+            <div class="proof-item"><div class="proof-num">4-6wk</div><h4>Visible Results</h4><p>Masseter hypertrophy timeline with daily mastic gum use and progressive chewing duration</p></div>
         </div>
-
         <div class="objections">
-            <div class="objection">
-                <p class="q">"Isn't gua sha a spa thing?"</p>
-                <p class="a">This isn't gua sha. It's a stainless steel drainage tool used with firm, deliberate strokes. Think physical therapy, not wellness retreat.</p>
-            </div>
-            <div class="objection">
-                <p class="q">"Does chewing gum actually build your jaw?"</p>
-                <p class="a">Mastic gum is 10x harder than regular gum. The masseter responds to progressive load like any skeletal muscle. This is how bodybuilders build jaws.</p>
-            </div>
-            <div class="objection">
-                <p class="q">"I'm not sure my jawline is fixable."</p>
-                <p class="a">Your bone structure hasn't changed. It's masked by fluid retention and skin laxity. Drain the fluid, tighten the skin, build the muscle — the structure is still there.</p>
-            </div>
-            <div class="objection">
-                <p class="q">"Will people notice?"</p>
-                <p class="a">They'll notice you look sharper. They won't know why. That's the point.</p>
-            </div>
+            <div class="objection"><p class="q">"Isn't gua sha a spa thing?"</p><p class="a">This is a stainless steel drainage tool, not a rose quartz accessory. The technique is rooted in physical therapy — firm strokes along lymphatic pathways to physically relocate fluid. Nothing about it is decorative.</p></div>
+            <div class="objection"><p class="q">"Does chewing gum actually build your jaw?"</p><p class="a">Mastic gum is roughly 10x harder than regular gum. The masseter is a skeletal muscle — it responds to progressive load like any other. Increase resistance, increase duration, see hypertrophy. Same principle as a bicep curl.</p></div>
+            <div class="objection"><p class="q">"I'm not sure my jawline is fixable."</p><p class="a">Your bone structure hasn't changed. It's masked — by retained fluid sitting in the tissue and skin that's lost its tension. Strip the fluid, tighten the skin, build the muscle. The structure is still there.</p></div>
+            <div class="objection"><p class="q">"Will people notice?"</p><p class="a">They'll notice you look sharper. More defined. More rested. They won't know why. That's the point — it reads as genetics, not product.</p></div>
         </div>
     </section>
 
-    <div class="section-spacer"></div><hr class="section-divider">
+    <div class="section-spacer"></div><hr class="divider">
 
     <div class="final-cta fade-in">
         <div class="price">$89</div>
-        <p class="price-context">One-time purchase &middot; or <strong>$65/mo</strong> with auto-refills</p>
+        <p class="price-context">One-time purchase · or <strong>$65/mo</strong> with auto-refills</p>
         <div class="cta-group">
-            <a href="#" class="btn btn-primary">Start the Protocol &mdash; $89</a>
-            <a href="#" class="btn btn-secondary">Subscribe &mdash; $65/mo</a>
+            <a href="#" class="btn btn-primary">Start the Protocol — $89</a>
+            <a href="#" class="btn btn-secondary">Subscribe — $65/mo</a>
         </div>
-        <p class="guarantee">Free shipping &middot; Protocol card included &middot; Cancel subscription anytime</p>
+        <p class="guarantee">Free shipping · Protocol card included · Cancel subscription anytime</p>
     </div>
 
-    <footer>&copy; 2026 DuskCo &middot; Peptide Protocol</footer>
+    <footer>&copy; 2026 Peptide Protocol</footer>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.12, rootMargin: '-20px' });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
