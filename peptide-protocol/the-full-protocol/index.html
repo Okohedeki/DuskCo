@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Full Protocol — Peptide Protocol</title>
+    <meta name="description" content="The complete AM/PM system. Morning defense. Night repair. 5 products, 4 minutes per day, zero guesswork. $169 or $99/mo.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+            padding: 20px 24px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        nav a {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #555;
+            text-decoration: none;
+        }
+
+        nav a:hover { color: #aaa; }
+
+        .hero {
+            width: 100%;
+            max-width: 720px;
+            padding: 80px 24px 60px;
+            text-align: center;
+        }
+
+        .hero .label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .hero .hook {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .hero .price-block {
+            margin-top: 32px;
+        }
+
+        .hero .price-main {
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .hero .price-sub {
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .hero .cta-group {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 14px 32px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .btn-primary {
+            color: #0a0a0a;
+            background: #fff;
+            border: 1px solid #fff;
+        }
+
+        .btn-primary:hover {
+            background: #ddd;
+            border-color: #ddd;
+        }
+
+        .btn-secondary {
+            color: #fff;
+            background: transparent;
+            border: 1px solid #333;
+        }
+
+        .btn-secondary:hover {
+            border-color: #555;
+            background: #181818;
+        }
+
+        section {
+            width: 100%;
+            max-width: 720px;
+            padding: 0 24px;
+        }
+
+        .divider {
+            width: 100%;
+            max-width: 720px;
+            border: none;
+            border-top: 1px solid #1a1a1a;
+            margin: 60px auto;
+        }
+
+        .protocol-section h2 {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .routine-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #444;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .step {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 36px;
+        }
+
+        .step-num {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: #222;
+            line-height: 1;
+            min-width: 40px;
+        }
+
+        .step-content h3 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+
+        .step-content .compound {
+            font-size: 0.78rem;
+            color: #555;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        .system-section {
+            text-align: center;
+        }
+
+        .system-section h2 {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .system-section p {
+            font-size: 0.95rem;
+            color: #888;
+            line-height: 1.8;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .system-section .brand-line {
+            margin-top: 24px;
+            font-size: 1rem;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .final-cta .price-main {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .final-cta .price-sub {
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 28px;
+        }
+
+        .final-cta .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .proof-section {
+            text-align: center;
+        }
+
+        .proof-section h2 {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .proof-placeholder {
+            border: 1px dashed #222;
+            padding: 40px 24px;
+            color: #444;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        footer {
+            width: 100%;
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            font-size: 0.75rem;
+            color: #444;
+            letter-spacing: 0.1em;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 48px 16px 40px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero .hook { font-size: 0.95rem; }
+            section { padding: 0 16px; }
+            .step { gap: 16px; }
+            .step-num { font-size: 2rem; min-width: 30px; }
+            .btn { padding: 12px 24px; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../">&larr; All Protocols</a>
+    </nav>
+
+    <div class="hero">
+        <p class="label">Peptide Protocol</p>
+        <h1>The Full Protocol</h1>
+        <p class="hook">The complete AM/PM system. Morning defense. Night repair. Nothing left to figure out.</p>
+        <div class="price-block">
+            <div class="price-main">$169</div>
+            <div class="price-sub">or $99/mo with auto-refills</div>
+        </div>
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">Get the Full Protocol</a>
+            <a href="#" class="btn btn-secondary">Subscribe &mdash; $99/mo</a>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <section class="protocol-section">
+        <h2>5 Products. 4 Minutes. 24-Hour Coverage.</h2>
+
+        <p class="routine-label">AM Routine &mdash; 2 minutes</p>
+
+        <div class="step">
+            <span class="step-num">01</span>
+            <div class="step-content">
+                <h3>AM Peptide Serum</h3>
+                <p class="compound">Matrixyl + Argireline</p>
+                <p>Collagen signaling and expression line defense. Matrixyl triggers new collagen synthesis. Argireline reduces line depth at the neuromuscular level. This is your morning offense — rebuilding while defending.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-num">02</span>
+            <div class="step-content">
+                <h3>Precision Derma Roller</h3>
+                <p class="compound">0.25mm micro-needling</p>
+                <p>Amplifies serum penetration 3-5x by creating micro-channels in the skin barrier. Apply immediately after the AM serum for maximum compound delivery.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-num">03</span>
+            <div class="step-content">
+                <h3>SPF Moisturizer</h3>
+                <p class="compound">Niacinamide-infused defense</p>
+                <p>Seals in the AM compounds, blocks UV degradation, and evens skin tone. Niacinamide strengthens the barrier and reduces water loss. Everything before this step is offense. This is the shield.</p>
+            </div>
+        </div>
+
+        <p class="routine-label">PM Routine &mdash; 2 minutes</p>
+
+        <div class="step">
+            <span class="step-num">04</span>
+            <div class="step-content">
+                <h3>PM Night Serum</h3>
+                <p class="compound">Syn-Ake + Leuphasyl</p>
+                <p>Runs neuromuscular relaxation while you sleep. Expression lines flatten overnight. Your skin's repair window peaks between 10pm and 2am — this serum gives it the signal compounds to work with during that window.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-num">05</span>
+            <div class="step-content">
+                <h3>Cryo Roller</h3>
+                <p class="compound">Vasoconstriction + anti-inflammation</p>
+                <p>Cold therapy after the night serum. Constricts blood vessels to lock compounds into the tissue, reduces overnight puffiness, and kills inflammation before it accumulates. 2 minutes across face and jawline. Then sleep.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="system-section">
+        <h2>Why the Full Protocol</h2>
+        <p>One box. Both routines. A protocol card that tells you exactly what to do, morning and night. No research required. No additional products needed. No decisions left to make. You handle showing up for 4 minutes a day. The system handles everything else.</p>
+        <p class="brand-line">Your face is a system. Treat it like one.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section class="final-cta">
+        <div class="price-main">$169</div>
+        <div class="price-sub">One-time purchase &middot; or $99/mo with auto-refills</div>
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">Buy Once &mdash; $169</a>
+            <a href="#" class="btn btn-secondary">Subscribe &mdash; $99/mo</a>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="proof-section">
+        <h2>Results</h2>
+        <div class="proof-placeholder">Real user results — coming soon</div>
+    </section>
+
+    <footer>
+        &copy; 2026 DuskCo &middot; Peptide Protocol
+    </footer>
+</body>
+</html>

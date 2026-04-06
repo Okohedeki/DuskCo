@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Edge — Peptide Protocol</title>
+    <meta name="description" content="Jawline. Cheekbones. Definition. Built, not born. Copper peptide serum, contour tool, and mastic gum. $89 or $65/mo.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+            padding: 20px 24px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        nav a {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #555;
+            text-decoration: none;
+        }
+
+        nav a:hover { color: #aaa; }
+
+        .hero {
+            width: 100%;
+            max-width: 720px;
+            padding: 80px 24px 60px;
+            text-align: center;
+        }
+
+        .hero .label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .hero .hook {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .hero .price-block {
+            margin-top: 32px;
+        }
+
+        .hero .price-main {
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .hero .price-sub {
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .hero .cta-group {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 14px 32px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .btn-primary {
+            color: #0a0a0a;
+            background: #fff;
+            border: 1px solid #fff;
+        }
+
+        .btn-primary:hover {
+            background: #ddd;
+            border-color: #ddd;
+        }
+
+        .btn-secondary {
+            color: #fff;
+            background: transparent;
+            border: 1px solid #333;
+        }
+
+        .btn-secondary:hover {
+            border-color: #555;
+            background: #181818;
+        }
+
+        section {
+            width: 100%;
+            max-width: 720px;
+            padding: 0 24px;
+        }
+
+        .divider {
+            width: 100%;
+            max-width: 720px;
+            border: none;
+            border-top: 1px solid #1a1a1a;
+            margin: 60px auto;
+        }
+
+        .protocol-section h2 {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .step {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 36px;
+        }
+
+        .step-num {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: #222;
+            line-height: 1;
+            min-width: 40px;
+        }
+
+        .step-content h3 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+
+        .step-content .compound {
+            font-size: 0.78rem;
+            color: #555;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        .system-section {
+            text-align: center;
+        }
+
+        .system-section h2 {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .system-section p {
+            font-size: 0.95rem;
+            color: #888;
+            line-height: 1.8;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .system-section .brand-line {
+            margin-top: 24px;
+            font-size: 1rem;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .final-cta .price-main {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .final-cta .price-sub {
+            margin-top: 6px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 28px;
+        }
+
+        .final-cta .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .proof-section {
+            text-align: center;
+        }
+
+        .proof-section h2 {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .proof-placeholder {
+            border: 1px dashed #222;
+            padding: 40px 24px;
+            color: #444;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        footer {
+            width: 100%;
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            font-size: 0.75rem;
+            color: #444;
+            letter-spacing: 0.1em;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 48px 16px 40px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero .hook { font-size: 0.95rem; }
+            section { padding: 0 16px; }
+            .step { gap: 16px; }
+            .step-num { font-size: 2rem; min-width: 30px; }
+            .btn { padding: 12px 24px; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../">&larr; All Protocols</a>
+    </nav>
+
+    <div class="hero">
+        <p class="label">Peptide Protocol</p>
+        <h1>The Edge</h1>
+        <p class="hook">Jawline. Cheekbones. Definition. Built, not born.</p>
+        <div class="price-block">
+            <div class="price-main">$89</div>
+            <div class="price-sub">or $65/mo with auto-refills</div>
+        </div>
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">Start the Protocol</a>
+            <a href="#" class="btn btn-secondary">Subscribe &mdash; $65/mo</a>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <section class="protocol-section">
+        <h2>3 Tools. 3 Biological Pathways.</h2>
+
+        <div class="step">
+            <span class="step-num">01</span>
+            <div class="step-content">
+                <h3>GHK-Cu Copper Peptide Serum</h3>
+                <p class="compound">Skin remodeling + tightening</p>
+                <p>GHK-Cu is one of the most studied peptides in skin remodeling. It triggers tissue tightening and collagen restructuring at the cellular level — firmer, denser skin that holds definition instead of blurring it. Apply to jawline, cheekbones, and under-chin.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-num">02</span>
+            <div class="step-content">
+                <h3>Stainless Steel Contour Tool</h3>
+                <p class="compound">Lymphatic drainage + sculpting</p>
+                <p>Retained subcutaneous fluid blurs your jawline and cheekbones. The steel contour tool pushes it out through firm, deliberate strokes along the jaw and orbital bone. This isn't a gentle spa motion — it's mechanical drainage. The difference between looking tired and looking sharp is about 2mm of fluid.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-num">03</span>
+            <div class="step-content">
+                <h3>Mastic Gum</h3>
+                <p class="compound">30-day supply &mdash; masseter hypertrophy</p>
+                <p>The masseter is the muscle that defines your jawline. Mastic gum provides progressive chewing resistance that builds it over time — the same principle as any other muscle hypertrophy protocol. Chew for 20-30 minutes daily. Visible jaw width increase within 4-6 weeks.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="system-section">
+        <h2>Why a System</h2>
+        <p>Definition isn't one thing — it's the result of three: tight skin, drained fluid, and developed muscle. The serum remodels tissue. The tool drains fluid. The gum builds the underlying structure. Each compounds the others. One tool gives you a temporary effect. The system gives you a permanent one.</p>
+        <p class="brand-line">Your face is a system. Treat it like one.</p>
+    </section>
+
+    <hr class="divider">
+
+    <section class="final-cta">
+        <div class="price-main">$89</div>
+        <div class="price-sub">One-time purchase &middot; or $65/mo with auto-refills</div>
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">Buy Once &mdash; $89</a>
+            <a href="#" class="btn btn-secondary">Subscribe &mdash; $65/mo</a>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="proof-section">
+        <h2>Results</h2>
+        <div class="proof-placeholder">Real user results — coming soon</div>
+    </section>
+
+    <footer>
+        &copy; 2026 DuskCo &middot; Peptide Protocol
+    </footer>
+</body>
+</html>

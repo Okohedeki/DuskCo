@@ -36,7 +36,7 @@
         header {
             width: 100%;
             max-width: 800px;
-            padding: 60px 24px 40px;
+            padding: 60px 24px 20px;
         }
 
         header h1 {
@@ -54,10 +54,18 @@
             font-style: italic;
         }
 
+        header p.intro {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
         main {
             width: 100%;
             max-width: 800px;
-            padding: 20px 24px 60px;
+            padding: 40px 24px 60px;
             flex: 1;
         }
 
@@ -77,6 +85,14 @@
             background: #111;
         }
 
+        .bundle-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
         .bundle h2 {
             font-size: 1.05rem;
             font-weight: 500;
@@ -85,15 +101,37 @@
             color: #fff;
         }
 
+        .bundle h2 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .bundle h2 a:hover {
+            border-bottom: 1px solid #555;
+        }
+
         .bundle .price {
-            margin-top: 6px;
+            font-size: 0.85rem;
+            color: #fff;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .bundle .price .sub {
+            color: #666;
+            font-size: 0.78rem;
+        }
+
+        .bundle .tagline {
+            margin-top: 8px;
             font-size: 0.8rem;
             color: #666;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
         }
 
         .bundle .desc {
-            margin-top: 12px;
+            margin-top: 14px;
             font-size: 0.85rem;
             color: #999;
             line-height: 1.6;
@@ -107,42 +145,38 @@
             line-height: 1.8;
         }
 
-        .links-section {
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid #1a1a1a;
+        .bundle .actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .links-section h3 {
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
+        .btn {
+            display: inline-block;
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: #555;
-            margin-bottom: 16px;
-        }
-
-        .links-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .links-section li {
-            margin-bottom: 10px;
-        }
-
-        .links-section a {
-            font-size: 0.85rem;
-            color: #888;
+            color: #fff;
             text-decoration: none;
-            border-bottom: 1px solid #222;
-            padding-bottom: 2px;
-            transition: color 0.2s, border-color 0.2s;
+            border: 1px solid #333;
+            padding: 10px 24px;
+            transition: border-color 0.2s, background 0.2s;
         }
 
-        .links-section a:hover {
-            color: #ccc;
+        .btn:hover {
             border-color: #555;
+            background: #181818;
+        }
+
+        .btn-secondary {
+            color: #666;
+            border-color: #222;
+        }
+
+        .btn-secondary:hover {
+            color: #aaa;
+            border-color: #444;
         }
 
         footer {
@@ -154,6 +188,16 @@
             color: #444;
             letter-spacing: 0.1em;
         }
+
+        @media (max-width: 600px) {
+            header { padding: 40px 16px 16px; }
+            header h1 { font-size: 1.5rem; }
+            main { padding: 24px 16px 40px; }
+            .bundle { padding: 20px; }
+            .bundle-header { flex-direction: column; }
+            .bundle .actions { flex-direction: column; }
+            .btn { text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -164,74 +208,105 @@
     <header>
         <h1>Peptide Protocol</h1>
         <p class="brand-line">Your face is a system. Treat it like one.</p>
+        <p class="intro">Clinical-grade peptide compounds. System-based routines. Each bundle is a complete protocol — not a collection of products. Pick the system that matches your objective.</p>
     </header>
 
     <main>
         <div class="bundles">
+
             <div class="bundle">
-                <h2>The Foundation</h2>
-                <span class="price">$79 &middot; $55/mo subscription</span>
-                <p class="desc">Entry-level daily system. Lowest barrier. Simplicity-first.</p>
+                <div class="bundle-header">
+                    <h2><a href="the-foundation/">The Foundation</a></h2>
+                    <span class="price">$79 <span class="sub">/ $55/mo</span></span>
+                </div>
+                <p class="tagline">Entry-level daily system</p>
+                <p class="desc">The minimum effective dose. 3 products, 90 seconds, every morning. Collagen signaling, UV defense, and amplified absorption.</p>
                 <ul class="products-list">
-                    <li>Peptide AM Serum (Matrixyl + Argireline)</li>
-                    <li>SPF Moisturizer (niacinamide-infused)</li>
-                    <li>Precision Derma Roller (0.25mm)</li>
+                    <li>Peptide AM Serum (Matrixyl + Argireline) &mdash; collagen signaling + expression line reduction</li>
+                    <li>SPF Moisturizer (niacinamide-infused) &mdash; daily defense + tone evening</li>
+                    <li>Precision Derma Roller (0.25mm) &mdash; increases serum absorption 3-5x</li>
                 </ul>
+                <div class="actions">
+                    <a href="#" class="btn">Buy Now &mdash; $79</a>
+                    <a href="the-foundation/" class="btn btn-secondary">View Protocol</a>
+                </div>
             </div>
 
             <div class="bundle">
-                <h2>The Edge</h2>
-                <span class="price">$89 &middot; $65/mo subscription</span>
-                <p class="desc">Night-phase recovery system. Compounds work while you sleep.</p>
+                <div class="bundle-header">
+                    <h2><a href="the-edge/">The Edge</a></h2>
+                    <span class="price">$89 <span class="sub">/ $65/mo</span></span>
+                </div>
+                <p class="tagline">Facial definition + structure</p>
+                <p class="desc">Jawline. Cheekbones. Sharpness. Three tools targeting three biological pathways for one outcome: a sharper face.</p>
                 <ul class="products-list">
-                    <li>Peptide PM Repair Serum (copper peptides + EGF)</li>
-                    <li>Retinoid Night Shield (encapsulated retinol)</li>
-                    <li>Precision Derma Roller (0.25mm)</li>
+                    <li>GHK-Cu Copper Peptide Serum &mdash; skin remodeling, firmness, tightening</li>
+                    <li>Stainless Steel Contour Tool &mdash; lymphatic drainage, reduces puffiness, sculpts</li>
+                    <li>Mastic Gum (30-day supply) &mdash; masseter hypertrophy for jawline definition</li>
                 </ul>
+                <div class="actions">
+                    <a href="#" class="btn">Buy Now &mdash; $89</a>
+                    <a href="the-edge/" class="btn btn-secondary">View Protocol</a>
+                </div>
             </div>
 
             <div class="bundle">
-                <h2>The Protocol</h2>
-                <span class="price">$149 &middot; $99/mo subscription</span>
-                <p class="desc">Full AM/PM system. The complete stack.</p>
+                <div class="bundle-header">
+                    <h2><a href="the-reboot/">The Reboot</a></h2>
+                    <span class="price">$149 <span class="sub">/ $55/mo</span></span>
+                </div>
+                <p class="tagline">Nighttime repair system</p>
+                <p class="desc">Your skin does 80% of its repair between 10pm and 2am. This system gives it better tools. Peptides, red light, and cold therapy while you sleep.</p>
                 <ul class="products-list">
-                    <li>Peptide AM Serum</li>
-                    <li>SPF Moisturizer</li>
-                    <li>Peptide PM Repair Serum</li>
-                    <li>Retinoid Night Shield</li>
-                    <li>Precision Derma Roller (0.25mm)</li>
+                    <li>Night Peptide Serum (Syn-Ake + Leuphasyl + Matrixyl) &mdash; neuromuscular relaxation + collagen signaling during sleep</li>
+                    <li>Red Light Therapy Mask &mdash; photobiomodulation, mitochondrial stimulation, collagen activation</li>
+                    <li>Cryo Roller &mdash; post-treatment vasoconstriction, reduces inflammation</li>
                 </ul>
+                <div class="actions">
+                    <a href="#" class="btn">Buy Now &mdash; $149</a>
+                    <a href="the-reboot/" class="btn btn-secondary">View Protocol</a>
+                </div>
             </div>
 
             <div class="bundle">
-                <h2>The Compound</h2>
-                <span class="price">$119 &middot; $85/mo subscription</span>
-                <p class="desc">Targeted intervention. Eyes + jawline + texture.</p>
+                <div class="bundle-header">
+                    <h2><a href="the-full-protocol/">The Full Protocol</a></h2>
+                    <span class="price">$169 <span class="sub">/ $99/mo</span></span>
+                </div>
+                <p class="tagline">Complete AM/PM system</p>
+                <p class="desc">Morning defense. Night repair. Two serums, two tools, one moisturizer. 4 minutes per day, every pathway covered, zero guesswork.</p>
                 <ul class="products-list">
-                    <li>Peptide Eye Compound (Haloxyl + Eyeliss + caffeine)</li>
-                    <li>Jawline Sculpt Serum (DMAE + peptides)</li>
-                    <li>AHA/BHA Resurface Pad (weekly)</li>
+                    <li>AM Peptide Serum (Matrixyl + Argireline) &mdash; collagen signaling + expression line defense</li>
+                    <li>PM Night Serum (Syn-Ake + Leuphasyl) &mdash; neuromuscular relaxation + repair during sleep</li>
+                    <li>SPF Moisturizer &mdash; niacinamide-infused daily defense</li>
+                    <li>Precision Derma Roller (0.25mm) &mdash; drives absorption 3-5x deeper</li>
+                    <li>Cryo Roller &mdash; vasoconstriction + anti-inflammation post-treatment</li>
                 </ul>
+                <div class="actions">
+                    <a href="#" class="btn">Buy Now &mdash; $169</a>
+                    <a href="the-full-protocol/" class="btn btn-secondary">View Protocol</a>
+                </div>
             </div>
 
             <div class="bundle">
-                <h2>The Full Stack</h2>
-                <span class="price">$249 &middot; $179/mo subscription</span>
-                <p class="desc">Everything. Every compound. Every protocol. One system.</p>
+                <div class="bundle-header">
+                    <h2><a href="the-rebuild/">The Rebuild</a></h2>
+                    <span class="price">$159 <span class="sub">/ $85/mo</span></span>
+                </div>
+                <p class="tagline">Volume restoration + skin tightening</p>
+                <p class="desc">For men who've lost facial volume &mdash; from weight loss, GLP-1 meds, aging, or cutting. Four tools to force skin remodeling and restore structure.</p>
                 <ul class="products-list">
-                    <li>All 7 products</li>
-                    <li>Precision Derma Roller</li>
-                    <li>Priority restocks</li>
+                    <li>GHK-Cu Copper Peptide Serum &mdash; tissue remodeling + tightening</li>
+                    <li>Collagen Signal Serum (Matrixyl + SNAP-8) &mdash; collagen synthesis + expression line smoothing</li>
+                    <li>Red Light Therapy Mask &mdash; mitochondrial stimulation for cellular repair</li>
+                    <li>Stainless Steel Contour Tool &mdash; lymphatic drainage + structural sculpting</li>
                 </ul>
+                <div class="actions">
+                    <a href="#" class="btn">Buy Now &mdash; $159</a>
+                    <a href="the-rebuild/" class="btn btn-secondary">View Protocol</a>
+                </div>
             </div>
-        </div>
 
-        <div class="links-section">
-            <h3>Links</h3>
-            <ul>
-                <li><a href="#">Store (coming soon)</a></li>
-                <li><a href="#">Instagram</a></li>
-            </ul>
         </div>
     </main>
 
